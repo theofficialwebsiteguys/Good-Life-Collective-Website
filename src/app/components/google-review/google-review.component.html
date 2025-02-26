@@ -1,0 +1,33 @@
+<div class="reviews-container">
+    <h2 class="reviews-title">What Our Customers Say</h2>
+    <div class="reviews-carousel">
+      <div class="reviews-track">
+        <div *ngFor="let review of reviews" class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">
+                <img *ngIf="review.sanitizedProfileUrl"
+                [src]="review.sanitizedProfileUrl"
+                alt="Reviewer Avatar"
+                loading="eager"
+                (error)="usePlaceholder($event)" />
+           
+            </div>
+            <div class="review-info">
+              <h3 class="review-author">{{ review.author_name }}</h3>
+              <p class="review-date">{{ formatDate(review.time) }}</p>
+            </div>
+          </div>
+  
+          <div class="review-stars">
+            <span *ngFor="let star of getStarsArray(review.rating)">⭐</span>
+          </div>
+  
+          <p class="review-text">
+            {{ truncateText(review.text, 300) }}
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
