@@ -1,0 +1,85 @@
+.featured-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    max-width: 1200px; /* Restricts the section width */
+    margin: 0 auto; /* Centers the section */
+  
+    .text-content {
+      flex: 1;
+      padding-right: 20px; /* Reduce padding to bring text closer */
+      max-width: 45%; /* Keeps text compact and closer to the image */
+  
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #264020;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #333;
+      }
+  
+      .buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+  
+        a {
+          padding: 12px 20px;
+          border-radius: 8px;
+          font-size: 16px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+  
+        .btn-primary {
+          background: #25463d;
+          color: white;
+        }
+  
+        .btn-secondary {
+          background: #f1bb09;
+          color: white;
+        }
+      }
+    }
+  
+    .image-content {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start; /* Adjust to keep image closer */
+      max-width: 45%; /* Keeps image compact and near text */
+  
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      text-align: center;
+      max-width: 100%; /* Full width for smaller screens */
+  
+      .text-content {
+        max-width: 100%;
+        padding-right: 0;
+      }
+  
+      .image-content {
+        justify-content: center;
+        margin-top: 20px;
+        max-width: 100%;
+      }
+
+      .buttons{
+        justify-content: center;
+      }
+    }
+  }
+  

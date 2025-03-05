@@ -1,17 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
+  @Input() singleImage: string | null = null; // Image for static pages
+  @Input() title: string = "FEEL THE POWER OF THE FLOWER"; // Dynamic Title
+  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary.<br>Order now for pickup or delivery today."; // Dynamic Subtitle
+  @Input() buttons: { text: string; class: string; link?: string }[] = [
+    { text: "Shop", class: "btn-primary", link: "/shop" },
+    { text: "Loyalty Rewards", class: "btn-secondary", link: "/loyalty"  }
+  ];
+  @Input() heroHeight: string = '60vh'; // Default height for main pages
+
+  
   images: string[] = [
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel1.jpg',
     'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel10.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel2.jpg',
     'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel3.jpg',
     'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel4.jpg',
     'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel5.jpg',
@@ -24,7 +33,10 @@ export class HeroComponent {
   intervalId: any;
 
   ngOnInit(): void {
-    this.startCarousel();
+    if (!this.singleImage) {
+      // If no single image is provided, start the carousel
+      this.startCarousel();
+    }
   }
 
   startCarousel(): void {

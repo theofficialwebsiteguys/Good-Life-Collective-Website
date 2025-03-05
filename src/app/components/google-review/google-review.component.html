@@ -5,12 +5,14 @@
         <div *ngFor="let review of reviews" class="review-card">
           <div class="review-header">
             <div class="review-avatar">
-                <img *ngIf="review.sanitizedProfileUrl"
+                <!-- <img *ngIf="review.sanitizedProfileUrl"
                 [src]="review.sanitizedProfileUrl"
                 alt="Reviewer Avatar"
                 loading="eager"
-                (error)="usePlaceholder($event)" />
-           
+                (error)="usePlaceholder($event)" /> -->
+                <div class="initials-avatar">
+                  <h4>{{ getInitials(review.author_name) }}</h4>
+              </div>
             </div>
             <div class="review-info">
               <h3 class="review-author">{{ review.author_name }}</h3>

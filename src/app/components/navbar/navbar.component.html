@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="logo">
-      <img src="../../../assets/fpd-logo-naked.png" alt="Flower Power Dispensers Logo">
+      <a href="/"><img src="../../../assets/fpd-logo-naked.png" alt="Flower Power Dispensers Logo"></a>
     </div>
   
     <button class="hamburger" (click)="toggleMenu()">
@@ -8,16 +8,15 @@
     </button>
   
     <ul class="menu" [ngClass]="{'active': menuOpen}">
-      <li (click)="closeMenu()">Shop Now</li>
-      <li (click)="closeMenu()">Brands</li>
-      <li (click)="closeMenu()">About</li>
-      <li (click)="closeMenu()">Events</li>
-      <li (click)="closeMenu()">Contact</li>
+      <li [routerLink]="'/shop'">Shop Now</li>
+      <li [routerLink]="'/loyalty'">Loyalty Program</li>
+      <li [routerLink]="'/about'">About</li>
+      <!-- <li (click)="closeMenu()">Events</li> -->
+      <li [routerLink]="'/contact'">Contact</li>
     </ul>
   
     <div class="search-cart">
-      <input type="text" placeholder="Search Products">
-      <i class="fas fa-search"></i>
-      <button class="cart"><i class="fas fa-cart-shopping"></i></button>
+      <lib-cart-icon></lib-cart-icon>
+      <lib-auth-nav></lib-auth-nav>
     </div>
   </nav>

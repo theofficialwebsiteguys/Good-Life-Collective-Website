@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
+import { DashboardComponent } from 'admin-dashboard'
 @Component({
   selector: 'app-banner',
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss'
 })

@@ -10,7 +10,7 @@ import { BannerComponent } from '../components/banner/banner.component';
 
 @Component({
   selector: 'app-home',
-  imports: [ TopBarComponent, NavbarComponent, HeroComponent, MarqueeComponent, CategorySectionComponent, BusinessDetailsComponent, GoogleReviewComponent, BannerComponent],
+  imports: [ HeroComponent, MarqueeComponent, CategorySectionComponent, BusinessDetailsComponent, GoogleReviewComponent, BannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

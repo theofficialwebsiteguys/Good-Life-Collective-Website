@@ -1,8 +1,8 @@
 <div class="category-section">
   <!-- PRODUCT CAROUSEL -->
-  <h2 class="section-title">Check Out Our Products</h2>
-
-  <div class="carousel-wrapper">
+  <h2 class="section-title">Check Out Our Newest Products</h2>
+  <lib-recent-products-carousel></lib-recent-products-carousel>
+  <!-- <div class="carousel-wrapper">
     <button class="carousel-button left" #productLeftArrow (click)="scrollProducts(-1)">&#10094;</button>
 
     <div class="product-carousel" #productCarousel>
@@ -18,11 +18,13 @@
 
     <button class="carousel-button right" #productRightArrow (click)="scrollProducts(1)">&#10095;</button>
   </div>
+ -->
+
 
   <!-- CATEGORY CAROUSEL -->
   <h2 class="section-title">Explore Our Categories</h2>
-
-  <div class="carousel-wrapper category-carousel-wrapper">
+  <lib-categories [iconSet]="'playful'"></lib-categories>
+  <!-- <div class="carousel-wrapper category-carousel-wrapper">
     <button class="carousel-button left" #categoryLeftArrow (click)="scrollCategories(-1)">&#10094;</button>
 
     <div class="category-carousel" #categoryCarousel>
@@ -35,7 +37,7 @@
     </div>
 
     <button class="carousel-button right" #categoryRightArrow (click)="scrollCategories(1)">&#10095;</button>
-  </div>
+  </div> -->
 
-  <button class="shop-button">Shop Now</button>
+  <button class="shop-button" [routerLink]="'/shop'">Shop Now</button>
 </div>

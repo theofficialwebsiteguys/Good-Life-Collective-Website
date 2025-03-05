@@ -1,7 +1,7 @@
 <div class="banner-container">
     <!-- Video Background -->
     <video #videoBackground class="banner-video" autoplay muted loop playsinline>
-        <source src="https://storage.googleapis.com/the-website-guys/Flower-Power/fpd-vid.mp4" type="video/mp4">
+        <source src="https://storage.googleapis.com/the-website-guys/Flower-Power/fpd-banner" type="video/mp4">
       </video>
   
     <!-- Dark Overlay -->
@@ -14,7 +14,7 @@
       <p class="banner-text">
         Feel free to reach out. Our expert team is here to help with your inquiries.
       </p>
-      <button class="banner-button">CONTACT US</button>
+      <button class="banner-button" [routerLink]="'/contact'">CONTACT US</button>
     </div>
   </div>
   

@@ -1,10 +1,16 @@
 <div class="top-bar">
     <div class="info">
-      <span>📍 22 West 66th Street, New York, NY 10023</span>
-      <span>📞 (646) 916-0491</span>
+      <span><i class="fa-solid fa-location-dot"></i> 22 West 66th Street, New York, NY 10023</span>
+      <span><i class="fa-solid fa-phone"></i> (646) 916-0491</span>
     </div>
     <div class="right">
-      <span><i class="fa-solid fa-clock"></i> 8:00 AM - 10:00 PM</span>
+      <span>
+        <i class="fa-solid fa-clock"></i>
+        <span [ngClass]="isOpen ? 'open' : 'closed'"> 
+          {{ isOpen ? 'Open Now' : 'Closed' }}
+        </span>
+      </span>
+      
       <button class="shop-now">Shop Now</button>
     </div>
   </div>

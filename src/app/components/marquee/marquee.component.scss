@@ -1,7 +1,7 @@
 .marquee-container {
     width: 100%;
     overflow: hidden;
-    background: #F8F5E4;
+    background: #2F4F2F;
     padding: 15px 0; // Thicker banner
     position: relative;
     white-space: nowrap;
@@ -13,7 +13,7 @@
     gap: 50px; // Space between messages
     font-size: 20px;
     font-weight: bold;
-    color: #b9985d;
+    color: #ffffff;
     text-transform: uppercase;
     min-width: 200%; // Ensures enough text to loop smoothly
     animation: scroll-left 20s linear infinite;

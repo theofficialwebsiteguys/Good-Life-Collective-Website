@@ -22,13 +22,13 @@ $gray-dark: #757575;
 
 // Global Styles
 body {
-  h1, h2, h3, li{
+  h1, h2, h3, h4, li{
     font-family: "Kaushan Script", serif;
     font-weight: 400;
     font-style: normal;
   }
 
-  p, span, button{
+  p, span, button, a{
     font-weight: bold;
     font-family: "Roboto", serif;
   }
@@ -86,4 +86,25 @@ body {
   &:hover {
     background-color: $secondary-color;
   }
+}
+
+button {
+  background-color: #25463D; /* Green */
+  color: white; /* White Text */
+  border: none;
+  padding: 5px 10px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded */
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #1e3b32; /* Darker Green on Hover */
+}
+
+button:disabled {
+  background-color: #A8B5A3; /* Muted Green for Disabled */
+  cursor: not-allowed;
 }

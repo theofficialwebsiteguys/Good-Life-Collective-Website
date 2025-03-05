@@ -42,7 +42,7 @@
     letter-spacing: 2px;
     font-size: 14px;
     font-weight: bold;
-    color: #d4af37; // Gold color
+    color: #f1bb09; // Gold color
   }
   
   .banner-title {
@@ -59,7 +59,8 @@
   }
   
   .banner-button {
-    background: #d4af37;
+    background: #f1bb09;
+    color: white;
     border: none;
     padding: 12px 24px;
     font-size: 16px;
@@ -70,6 +71,6 @@
   }
   
   .banner-button:hover {
-    background: #b8902e;
+    background: #f1bb09bd;
   }
   

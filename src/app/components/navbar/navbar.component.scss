@@ -1,75 +1,83 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    background: #F8F5E4;
-    position: relative;
-  
-    .logo img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #ffffff;
+  position: sticky; /* Makes the navbar stick */
+  top: 0; /* Sticks it to the top of the page */
+  z-index: 1000; /* Ensures it stays above other content */
+  width: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+
+  .logo img {
       width: 100px;
-    }
-  
-    .menu {
+  }
+
+  .menu {
       display: flex;
       gap: 25px;
       list-style: none;
       font-size: 22px;
-    }
-  
-    .search-cart {
+
+      li {
+          cursor: pointer;
+      }
+  }
+
+  .search-cart {
       display: flex;
       align-items: center;
       gap: 20px;
-    }
-  
-    input {
+  }
+
+  input {
       padding: 6px;
       border-radius: 6px;
       border: 1px solid #ddd;
-    }
-  
-    .cart {
+  }
+
+  .cart {
       background: none;
       border: none;
       font-size: 20px;
-    }
-  
-    /* HAMBURGER MENU */
-    .hamburger {
+  }
+
+  /* HAMBURGER MENU */
+  .hamburger {
       display: none;
       background: none;
       border: none;
       font-size: 24px;
       cursor: pointer;
-    }
-  
-    /* MOBILE RESPONSIVENESS */
-    @media (max-width: 768px) {
-      .menu {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #F8F5E4;
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-        display: none;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-  
-      .menu.active {
-        display: flex;
-      }
-  
-      .hamburger {
-        display: block;
-      }
-  
-      .search-cart {
-        display: none;
-      }
-    }
   }
+
+  /* MOBILE RESPONSIVENESS */
+  @media (max-width: 768px) {
+      .menu {
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background: #F8F5E4;
+          flex-direction: column;
+          gap: 10px;
+          padding: 15px;
+          display: none;
+          text-align: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu.active {
+          display: flex;
+      }
+
+      .hamburger {
+          display: block;
+      }
+
+      .search-cart {
+          display: none;
+      }
+  }
+}
