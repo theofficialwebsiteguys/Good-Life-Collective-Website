@@ -6,7 +6,7 @@ import { LoyaltyComponent } from './components/loyalty/loyalty.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
-import { BudtenderSalesComponent, DashboardComponent, OrdersComponent, UsersComponent } from 'admin-dashboard';
+import { BudtenderSalesComponent, DashboardComponent, OrdersComponent, UsersComponent, ToolsComponent } from 'admin-dashboard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -28,6 +28,7 @@ export const routes: Routes = [
           { path: 'orders', component: OrdersComponent },
           { path: 'users', component: UsersComponent },
           { path: 'budtender-sales', component: BudtenderSalesComponent },
+          { path: 'tools', component: ToolsComponent },
           // add more child routes here as needed
           { path: '', redirectTo: 'orders', pathMatch: 'full' }
         ]
