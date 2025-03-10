@@ -15,6 +15,6 @@ export class ReviewsService {
       'x-auth-api-key': environment.db_api_key
     });
 
-    return this.http.get<any>(`${environment.apiUrl}?place_id=${placeId}`, { headers });
+    return this.http.get<any>(`${environment.apiUrl}/businesses/reviews?place_id=${placeId}`, { headers });
   }
 }
