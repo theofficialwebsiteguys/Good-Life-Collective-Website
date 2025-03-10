@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ShopComponentsComponent, ShopComponent as ShopComponentLib, CategoriesComponent} from 'shop-components';
+import { ShopComponent as ShopComponentLib, CategoriesComponent, AdBannerComponent} from 'shop-components';
 
 @Component({
   selector: 'app-shop',
-  imports: [CommonModule, ShopComponentLib, CategoriesComponent],
+  imports: [CommonModule, ShopComponentLib, CategoriesComponent, AdBannerComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
 })

@@ -1,35 +1,36 @@
-<div class="reviews-container">
-    <h2 class="reviews-title">What Our Customers Say</h2>
-    <div class="reviews-carousel">
-      <div class="reviews-track">
-        <div *ngFor="let review of reviews" class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">
-                <!-- <img *ngIf="review.sanitizedProfileUrl"
-                [src]="review.sanitizedProfileUrl"
-                alt="Reviewer Avatar"
-                loading="eager"
-                (error)="usePlaceholder($event)" /> -->
-                <div class="initials-avatar">
-                  <h4>{{ getInitials(review.author_name) }}</h4>
-              </div>
-            </div>
-            <div class="review-info">
-              <h3 class="review-author">{{ review.author_name }}</h3>
-              <p class="review-date">{{ formatDate(review.time) }}</p>
+<section class="reviews-container" aria-labelledby="reviews-heading">
+  <h2 id="reviews-heading" class="reviews-title">What Our Customers Say</h2>
+  <div class="reviews-carousel" role="region" aria-label="Customer Reviews Carousel">
+    <div class="reviews-track" role="list">
+      <div *ngFor="let review of reviews" class="review-card" role="listitem">
+        <div class="review-header">
+          <div class="review-avatar">
+            <!-- Uncomment the image if available; otherwise the initials avatar is shown -->
+            <!--
+            <img *ngIf="review.sanitizedProfileUrl"
+                 [src]="review.sanitizedProfileUrl"
+                 alt="Reviewer Avatar"
+                 loading="eager"
+                 (error)="usePlaceholder($event)" />
+            -->
+            <div class="initials-avatar">
+              <h4>{{ getInitials(review.author_name) }}</h4>
             </div>
           </div>
-  
-          <div class="review-stars">
-            <span *ngFor="let star of getStarsArray(review.rating)">⭐</span>
+          <div class="review-info">
+            <h3 class="review-author">{{ review.author_name }}</h3>
+            <p class="review-date">{{ formatDate(review.time) }}</p>
           </div>
-  
-          <p class="review-text">
-            {{ truncateText(review.text, 300) }}
-          </p>
-          
         </div>
+  
+        <div class="review-stars" [attr.aria-label]="'Rating: ' + review.rating + ' out of 5'">
+          <span *ngFor="let star of getStarsArray(review.rating)">⭐</span>
+        </div>
+  
+        <p class="review-text">
+          {{ truncateText(review.text, 300) }}
+        </p>
       </div>
     </div>
   </div>
-  
+</section>

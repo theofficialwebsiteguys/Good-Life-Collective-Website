@@ -1,23 +1,37 @@
-<app-hero 
-  singleImage="assets/banner2.jpg"
-  title="Who is Flower Power?"
-  [subtitle]="''"
-  [buttons]="[
-  ]"
-  [heroHeight]="'30vh'">
-</app-hero>
+<!-- Hero Section -->
+<section aria-labelledby="hero-heading">
+  <h2 id="hero-heading" class="visually-hidden">Welcome to Flower Power</h2>
+  <app-hero 
+    singleImage="assets/banner2.jpg"
+    title="Who is Flower Power?"
+    [subtitle]="''"
+    [buttons]="[]"
+    [heroHeight]="'30vh'">
+  </app-hero>
+</section>
 
-<app-marquee></app-marquee>
+<!-- Marquee Section -->
+<section aria-label="Featured News and Announcements">
+  <app-marquee></app-marquee>
+</section>
 
-<app-app-display 
-  title="Meet The Owner"
-  description="Our founder Angelo has worn many hats: family man, licensed electrician, and advocate."
-  subdescription="For Angelo, whose family immigrated to Queens from Greece when he was a child, Flower Power Dispensers is the manifestation of decades of hard work and sacrifice and is a dream come true."
-  imageUrl="assets/angelo.jpeg"
-  buttonOneText=""
-  buttonTwoText=""
-  buttonOneLink=""
-  buttonTwoLink="">
-</app-app-display>
+<!-- Team Display Section -->
+<section aria-labelledby="team-heading">
+  <h2 id="team-heading" class="visually-hidden">Meet Our Team</h2>
+  <app-app-display 
+    title="Meet Our Team"
+    description="At Flower Power Dispensers, our team of knowledgeable and welcoming budtenders is here to make your experience easy and enjoyable."
+    subdescription="Whether you're a first-time shopper or a seasoned connoisseur, our in-store staff is dedicated to helping you find exactly what you need—without any pressure, just good vibes and expert recommendations."  
+    imageUrl="assets/team.jpg"
+    buttonOneText=""
+    buttonTwoText=""
+    buttonOneLink=""
+    buttonTwoLink="">
+  </app-app-display>
+</section>
 
-<app-business-details></app-business-details>
+<!-- Business Details Section -->
+<section aria-labelledby="business-details-heading">
+  <h2 id="business-details-heading" class="visually-hidden">Business Details</h2>
+  <app-business-details></app-business-details>
+</section>

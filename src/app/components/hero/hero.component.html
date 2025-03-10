@@ -1,8 +1,7 @@
-<div class="hero" [ngStyle]="{'background-image': 'url(' + (singleImage ? singleImage : images[currentIndex]) + ')', 'height': heroHeight}">
-
-  <div class="overlay"></div>
+<section class="hero" role="banner" aria-labelledby="hero-title" [ngStyle]="{'background-image': 'url(' + (singleImage ? singleImage : images[currentIndex]) + ')', 'height': heroHeight}">
+  <div class="overlay" aria-hidden="true"></div>
   <div class="hero-content">
-    <h1>{{ title }}</h1>
+    <h1 id="hero-title">{{ title }}</h1>
     <p [innerHTML]="subtitle"></p>
     <div class="buttons">
       <button *ngFor="let btn of buttons" [class]="btn.class" [routerLink]="btn.link">
@@ -10,4 +9,4 @@
       </button>
     </div>
   </div>
-</div>
+</section>

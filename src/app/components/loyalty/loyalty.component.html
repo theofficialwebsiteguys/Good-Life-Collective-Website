@@ -1,17 +1,25 @@
-<app-hero 
-  singleImage="https://storage.googleapis.com/the-website-guys/Flower-Power/carousel2.jpg"
-  title="Exclusive Loyalty Rewards For You"
-  [subtitle]="'Join our loyalty program and earn points on every purchase.<br>Be the first to know about new products and special deals!'"
-  [buttons]="[
-    { text: 'Sign Up', class: 'btn-primary', link: '/register'},
-    { text: 'Login', class: 'btn-secondary', link: '/login' }
-  ]"
-  [heroHeight]="'50vh'">
-</app-hero>
+<!-- Hero Section -->
+<section class="hero-section" role="banner" aria-labelledby="hero-heading">
+  <h2 id="hero-heading" class="visually-hidden">Promotional Offer - Download Our App</h2>
+  <app-hero 
+    singleImage="https://storage.googleapis.com/the-website-guys/Flower-Power/carousel2.jpg"
+    title="Get the Best Deals - Download Our App!"
+    [subtitle]="'Shop with ease, access exclusive offers, and stay updated on new products. Download now and elevate your shopping experience!'"
+    [buttons]="[
+      { text: 'Sign Up', class: 'btn-primary', link: '/register' },
+      { text: 'Login', class: 'btn-secondary', link: '/login' }
+    ]"
+    [heroHeight]="'50vh'">
+  </app-hero>
+</section>
 
-<app-app-display 
-  buttonOneText="Download on Apple Store"
-  buttonTwoText="Download on Google Play"
-  buttonOneLink="https://apps.apple.com/us/app/flower-power-dispensers/id6741185131"
-  buttonTwoLink="https://play.google.com/store/apps/details?id=com.flowerpowerdispensers.app&pcampaignid=web_share">
-</app-app-display>
+<!-- App Display Section -->
+<section class="app-display-section" aria-labelledby="app-display-heading">
+  <h2 id="app-display-heading" class="visually-hidden">Download Our App</h2>
+  <app-app-display 
+    buttonOneText="Download on Apple Store"
+    buttonTwoText="Download on Google Play"
+    buttonOneLink="https://apps.apple.com/us/app/flower-power-dispensers/id6741185131"
+    buttonTwoLink="https://play.google.com/store/apps/details?id=com.flowerpowerdispensers.app&pcampaignid=web_share">
+  </app-app-display>
+</section>

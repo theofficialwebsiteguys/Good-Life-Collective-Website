@@ -1,20 +1,21 @@
-<div class="featured-section">
+<section class="featured-section" aria-labelledby="featured-section-heading">
     <div class="text-content">
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
-        <p>{{ subdescription }}</p>
-
-        <!-- Conditionally Render Buttons -->
-        <div class="buttons" *ngIf="buttonOneText || buttonTwoText">
-            <a *ngIf="buttonOneText" [href]="buttonOneLink" class="btn-primary">
-                {{ buttonOneText }}
-            </a>
-            <a *ngIf="buttonTwoText" [href]="buttonTwoLink" class="btn-secondary">
-                {{ buttonTwoText }}
-            </a>
-        </div>
+      <h2 id="featured-section-heading">{{ title }}</h2>
+      <p>{{ description }}</p>
+      <p>{{ subdescription }}</p>
+  
+      <!-- Conditionally Render Buttons -->
+      <div class="buttons" *ngIf="buttonOneText || buttonTwoText">
+        <a *ngIf="buttonOneText" [href]="buttonOneLink" class="btn-primary">
+          {{ buttonOneText }}
+        </a>
+        <a *ngIf="buttonTwoText" [href]="buttonTwoLink" class="btn-secondary">
+          {{ buttonTwoText }}
+        </a>
+      </div>
     </div>
     <div class="image-content">
-        <img [src]="imageUrl" alt="Featured Image">
+      <img [src]="imageUrl" [alt]="'Featured image for ' + title" />
     </div>
-</div>
+  </section>
+  

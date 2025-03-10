@@ -1,43 +1,19 @@
-<div class="category-section">
+<section class="category-section" aria-labelledby="category-section-heading">
+  <!-- Visually Hidden Heading for Screen Readers -->
+  <h2 id="category-section-heading" class="visually-hidden">Product and Category Showcase</h2>
+  
   <!-- PRODUCT CAROUSEL -->
-  <h2 class="section-title">Check Out Our Newest Products</h2>
-  <lib-recent-products-carousel></lib-recent-products-carousel>
-  <!-- <div class="carousel-wrapper">
-    <button class="carousel-button left" #productLeftArrow (click)="scrollProducts(-1)">&#10094;</button>
-
-    <div class="product-carousel" #productCarousel>
-      <div *ngFor="let product of products" class="product-card">
-        <img [src]="product.image" [alt]="product.name" class="product-image">
-        <div class="product-info">
-          <h3 class="product-name">{{ product.name }}</h3>
-          <p class="product-price">{{ product.price }}</p>
-          <button class="view-button">View Product</button>
-        </div>
-      </div>
-    </div>
-
-    <button class="carousel-button right" #productRightArrow (click)="scrollProducts(1)">&#10095;</button>
+  <div class="product-carousel-section" role="region" aria-labelledby="newest-products-heading">
+    <h2 id="newest-products-heading" class="section-title">Check Out Our Newest Products</h2>
+    <lib-recent-products-carousel></lib-recent-products-carousel>
   </div>
- -->
-
-
+  
   <!-- CATEGORY CAROUSEL -->
-  <h2 class="section-title">Explore Our Categories</h2>
-  <lib-categories [iconSet]="'playful'"></lib-categories>
-  <!-- <div class="carousel-wrapper category-carousel-wrapper">
-    <button class="carousel-button left" #categoryLeftArrow (click)="scrollCategories(-1)">&#10094;</button>
-
-    <div class="category-carousel" #categoryCarousel>
-      <div *ngFor="let category of categories" class="category-card">
-        <img [src]="category.image" [alt]="category.name" class="category-image">
-        <div class="category-info">
-          <h3 class="category-name">{{ category.name }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <button class="carousel-button right" #categoryRightArrow (click)="scrollCategories(1)">&#10095;</button>
-  </div> -->
-
-  <button class="shop-button" [routerLink]="'/shop'">Shop Now</button>
-</div>
+  <div class="category-carousel-section" role="region" aria-labelledby="explore-categories-heading">
+    <h2 id="explore-categories-heading" class="section-title">Explore Our Categories</h2>
+    <lib-categories [iconSet]="'playful'"></lib-categories>
+  </div>
+  
+  <!-- Shop Now Button -->
+  <button class="shop-button" [routerLink]="'/shop'" aria-label="Shop Now">Shop Now</button>
+</section>

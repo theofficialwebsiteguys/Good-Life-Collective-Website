@@ -1,22 +1,24 @@
-<nav class="navbar">
-    <div class="logo">
-      <a [routerLink]="'/'"><img src="assets/fpd-logo-naked.png" alt="Flower Power Dispensers Logo"></a>
-    </div>
-  
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="logo">
+    <a [routerLink]="'/'">
+      <img src="assets/fpd-logo-naked.png" alt="Flower Power Dispensers Logo">
+    </a>
+  </div>
 
-  
-    <ul class="menu" [ngClass]="{'active': menuOpen}">
-      <li [routerLink]="'/shop'" (click)="closeMenu()">Shop Now</li>
-      <li [routerLink]="'/loyalty'" (click)="closeMenu()">Loyalty Program</li>
-      <li [routerLink]="'/about'" (click)="closeMenu()">About</li>
-      <li [routerLink]="'/contact'" (click)="closeMenu()">Contact</li>
-    </ul>
-  
-    <div class="search-cart">
-      <lib-cart-icon></lib-cart-icon>
-      <lib-auth-nav></lib-auth-nav>
-      <button class="hamburger" (click)="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </nav>
+  <ul class="menu" [ngClass]="{'active': menuOpen}">
+    <li><a [routerLink]="'/shop'" (click)="closeMenu()">Shop Now</a></li>
+    <li><a [routerLink]="'/loyalty'" (click)="closeMenu()">Mobile App</a></li>
+    <li><a [routerLink]="'/about'" (click)="closeMenu()">About</a></li>
+    <li><a [routerLink]="'/contact'" (click)="closeMenu()">Contact</a></li>
+  </ul>
+
+  <div class="search-cart">
+    <lib-cart-icon></lib-cart-icon>
+    <lib-auth-nav></lib-auth-nav>
+    <button class="hamburger" (click)="toggleMenu()"
+            [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+            [attr.aria-expanded]="menuOpen">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </div>
+</nav>

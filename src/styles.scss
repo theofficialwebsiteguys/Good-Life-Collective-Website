@@ -22,16 +22,14 @@ $gray-dark: #757575;
 
 // Global Styles
 body {
-  h1, h2, h3, h4, li{
+  h1, h2, li{
     font-family: "Kaushan Script", serif;
     font-weight: 400;
     font-style: normal;
   }
 
-  p, span, button, a{
-    font-weight: bold;
-    font-family: "Roboto", serif;
-  }
+  font-weight: bold;
+  font-family: "Roboto", serif;
   background-color: $highlight-color;
   color: $black;
   margin: 0;
@@ -93,7 +91,7 @@ button {
   color: white; /* White Text */
   border: none;
   padding: 5px 10px;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 8px; /* Rounded */
   cursor: pointer;
@@ -107,4 +105,15 @@ button:hover {
 button:disabled {
   background-color: #A8B5A3; /* Muted Green for Disabled */
   cursor: not-allowed;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }

@@ -1,35 +1,64 @@
 .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background: #2F4F2F;
-    padding: 15px 0; // Thicker banner
-    position: relative;
-    white-space: nowrap;
-    display: flex;
+  width: 100%;
+  overflow: hidden;
+  background: #2F4F2F;
+  padding: 15px 0;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.marquee {
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  min-width: 200%;
+  animation: scroll-left 20s linear infinite;
+}
+
+.marquee.paused {
+  animation-play-state: paused;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-right: 50px;
+  min-width: 100%;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
   }
-  
-  .marquee {
-    display: flex;
-    gap: 50px; // Space between messages
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    min-width: 200%; // Ensures enough text to loop smoothly
-    animation: scroll-left 20s linear infinite;
+  to {
+    transform: translateX(-100%);
   }
-  
-  .marquee span {
-    display: inline-block;
-    padding-right: 50px; // Space between repeated text
-    min-width: 100%; // Ensures smooth loop
-  }
-  
-  @keyframes scroll-left {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
+}
+
+/* Style for the pause/play control */
+.marquee-control {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.marquee-control:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.marquee:hover,
+.marquee:focus {
+  animation-play-state: paused;
+}

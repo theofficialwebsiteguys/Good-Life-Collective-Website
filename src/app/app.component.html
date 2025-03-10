@@ -1,10 +1,16 @@
 <ng-container *ngIf="!isDashboardRoute">
-  <app-top-bar></app-top-bar>
-  <app-navbar></app-navbar>
+  <header role="banner">
+    <app-top-bar></app-top-bar>
+    <app-navbar></app-navbar>
+  </header>
 </ng-container>
 
-<router-outlet></router-outlet>
+<main role="main">
+  <router-outlet></router-outlet>
+</main>
 
 <ng-container *ngIf="!isDashboardRoute">
-  <app-footer></app-footer>
+  <footer role="contentinfo">
+    <app-footer></app-footer>
+  </footer>
 </ng-container>

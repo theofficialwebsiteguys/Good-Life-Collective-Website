@@ -1,8 +1,37 @@
-<!-- <app-top-bar></app-top-bar>
-<app-navbar></app-navbar> -->
-<app-marquee></app-marquee>
-<app-hero></app-hero>
-<app-category-section></app-category-section>
-<app-business-details></app-business-details>
-<app-google-review></app-google-review>
-<app-banner></app-banner>
+<main>
+    <!-- Marquee Section -->
+    <section aria-label="Announcements">
+      <app-marquee></app-marquee>
+    </section>
+  
+    <!-- Hero Section -->
+    <section aria-labelledby="hero-section-heading">
+      <h2 id="hero-section-heading" class="visually-hidden">Main Promotional Banner</h2>
+      <app-hero></app-hero>
+    </section>
+  
+    <!-- Category and Shop Section -->
+    <section aria-labelledby="category-section-heading">
+      <h2 id="category-section-heading" class="visually-hidden">Product Categories and Shop</h2>
+      <app-category-section></app-category-section>
+    </section>
+  
+    <!-- Business Details Section -->
+    <section aria-labelledby="business-details-heading">
+      <h2 id="business-details-heading" class="visually-hidden">Business Details</h2>
+      <app-business-details></app-business-details>
+    </section>
+  
+    <!-- Customer Reviews Section -->
+    <section aria-labelledby="reviews-heading">
+      <h2 id="reviews-heading" class="visually-hidden">Customer Reviews</h2>
+      <app-google-review></app-google-review>
+    </section>
+  
+    <!-- Promotional Banner Section -->
+    <section aria-labelledby="banner-section-heading">
+      <h2 id="banner-section-heading" class="visually-hidden">Promotional Banner</h2>
+      <app-banner></app-banner>
+    </section>
+  </main>
+  

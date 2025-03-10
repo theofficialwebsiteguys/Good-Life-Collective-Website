@@ -4,10 +4,11 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { BusinessDetailsComponent } from '../business-details/business-details.component';
 import { HeroComponent } from '../hero/hero.component';
 import { MarqueeComponent } from '../marquee/marquee.component';
+import { ContactComponent as ContactComponentShop} from 'shop-components';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, BusinessDetailsComponent, HeroComponent, MarqueeComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, BusinessDetailsComponent, HeroComponent, MarqueeComponent, ContactComponentShop],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

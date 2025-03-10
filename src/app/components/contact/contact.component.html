@@ -1,47 +1,31 @@
-<app-hero 
-  singleImage="https://storage.googleapis.com/the-website-guys/Flower-Power/carousel1.jpg"
-  title="Contact"
-  [subtitle]="''"
-  [buttons]="[
-  ]"
-  [heroHeight]="'30vh'">
-</app-hero>
+<!-- Contact Page Template -->
+<main>
+  <!-- Hero Section -->
+  <section aria-labelledby="contact-hero-heading">
+    <h2 id="contact-hero-heading" class="visually-hidden">Contact Page Hero</h2>
+    <app-hero 
+      singleImage="https://storage.googleapis.com/the-website-guys/Flower-Power/carousel1.jpg"
+      title="Contact"
+      [subtitle]="''"
+      [buttons]="[]"
+      [heroHeight]="'30vh'">
+    </app-hero>
+  </section>
 
-<app-marquee></app-marquee>
+  <!-- Announcements / Marquee Section -->
+  <section aria-label="Announcements">
+    <app-marquee></app-marquee>
+  </section>
 
-<div class="contact-form">
-    <h2>Get in Touch</h2>
-    <p>We’d love to hear from you. Fill out the form below and we’ll get back to you soon.</p>
-  
-    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
-      
-      <div class="form-group">
-        <input type="text" formControlName="name" placeholder="Full Name *">
-        <div class="error" *ngIf="isSubmitted && formControls['name'].invalid">
-          Name is required.
-        </div>
-      </div>
-  
-      <div class="form-group">
-        <input type="email" formControlName="email" placeholder="Email Address *">
-        <div class="error" *ngIf="isSubmitted && formControls['email'].invalid">
-          Valid email is required.
-        </div>
-      </div>
-  
-      <div class="form-group">
-        <input type="tel" formControlName="phone" placeholder="Phone (Optional)">
-      </div>
-  
-      <div class="form-group">
-        <textarea formControlName="message" placeholder="Your Message *"></textarea>
-        <div class="error" *ngIf="isSubmitted && formControls['message'].invalid">
-          Message is required.
-        </div>
-      </div>
-  
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </div>
-  
-  <app-business-details></app-business-details>
+  <!-- Contact Form Section -->
+  <section aria-labelledby="contact-form-heading">
+    <h2 id="contact-form-heading" class="visually-hidden">Contact Form</h2>
+    <lib-contact></lib-contact>
+  </section>
+
+  <!-- Business Details Section -->
+  <section aria-labelledby="business-details-heading">
+    <h2 id="business-details-heading" class="visually-hidden">Business Details</h2>
+    <app-business-details></app-business-details>
+  </section>
+</main>
