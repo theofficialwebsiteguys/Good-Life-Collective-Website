@@ -188,3 +188,10 @@
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
 }
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; // Adjust based on design
+}

@@ -2,13 +2,24 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductListComponent, CategoriesComponent, RecentProductsCarouselComponent } from 'shop-components'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // ✅ Import Here
+
 @Component({
   selector: 'app-category-section',
-  imports: [CommonModule, CategoriesComponent, RecentProductsCarouselComponent, RouterModule],
+  imports: [CommonModule, CategoriesComponent, RecentProductsCarouselComponent, RouterModule, MatProgressSpinnerModule],
   templateUrl: './category-section.component.html',
   styleUrl: './category-section.component.scss'
 })
 export class CategorySectionComponent {
+  isLoading = true; // Initially true to show spinner
+
+  ngOnInit() {
+    // Simulating API/data load (Replace with actual API call)
+    setTimeout(() => {
+      this.isLoading = false; // Hide spinner when data is loaded
+    }, 2000); // Adjust time as needed
+  }
+}
   // @ViewChild('productCarousel', { static: false }) productCarousel!: ElementRef;
   // @ViewChild('categoryCarousel', { static: false }) categoryCarousel!: ElementRef;
   // @ViewChild('productLeftArrow', { static: false }) productLeftArrow!: ElementRef;
@@ -116,4 +127,3 @@ export class CategorySectionComponent {
   //     image: '/assets/icons/accessories.png'
   //   }
   // ];
-}

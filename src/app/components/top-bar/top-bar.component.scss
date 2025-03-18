@@ -46,8 +46,7 @@
       }
   
       /* HIDE PHONE NUMBER & SHOP NOW BUTTON ON SMALL SCREENS */
-      .shop-now,
-      .info span:nth-child(2) { // Targets the phone number
+      .shop-now { // Targets the phone number
         display: none;
       }
     }

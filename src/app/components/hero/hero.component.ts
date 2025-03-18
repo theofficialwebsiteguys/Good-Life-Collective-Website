@@ -10,11 +10,11 @@ import { RouterModule } from '@angular/router';
 })
 export class HeroComponent {
   @Input() singleImage: string | null = null; // Image for static pages
-  @Input() title: string = "FEEL THE POWER OF THE FLOWER"; // Dynamic Title
-  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary.<br>Order now for pickup or delivery today."; // Dynamic Subtitle
+  @Input() title: string = "Welcome To Flower Power Dispensers"; // Dynamic Title
+  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary.<br>Order now for pickup or FREE delivery today."; // Dynamic Subtitle
   @Input() buttons: { text: string; class: string; link?: string }[] = [
     { text: "Shop", class: "btn-primary", link: "/shop" },
-    { text: "Loyalty Rewards", class: "btn-secondary", link: "/loyalty"  }
+    { text: "Mobile App", class: "btn-secondary", link: "/loyalty"  }
   ];
   @Input() heroHeight: string = '60vh'; // Default height for main pages
 

@@ -1,0 +1,95 @@
+.events-section {
+  padding: 2rem;
+  /* Center the overall section if desired. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.month-section {
+  /* Limit the width of each month section so it's nicely centered. */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem; /* center + spacing at bottom */
+}
+
+.month-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid;
+  padding-bottom: 0.5rem;
+  text-align: center; /* center the month title text */
+}
+
+.events-grid {
+  /* Define exactly three columns */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  /* Center the grid within the month-section width */
+  justify-items: center;  /* centers each card within its grid cell */
+  /* or if each column is a fixed width, you can use justify-content: center; */
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 90%; /* or a fixed width like 300px if you prefer */
+  max-width: 300px; /* ensure consistent card size */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 1rem;
+}
+
+.event-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-date,
+.event-location {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.event-description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* (Optional) Media Query for smaller screens */
+@media (max-width: 900px) {
+  .events-grid {
+    /* Go down to two columns on narrower screens */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .events-grid {
+    /* Go down to one column on very narrow screens */
+    grid-template-columns: 1fr;
+  }
+}

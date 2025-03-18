@@ -7,10 +7,11 @@ import { CategorySectionComponent } from '../components/category-section/categor
 import { BusinessDetailsComponent } from '../components/business-details/business-details.component';
 import { GoogleReviewComponent } from '../components/google-review/google-review.component';
 import { BannerComponent } from '../components/banner/banner.component';
+import { FaqComponent } from '../components/faq/faq.component';
 
 @Component({
   selector: 'app-home',
-  imports: [ HeroComponent, MarqueeComponent, CategorySectionComponent, BusinessDetailsComponent, GoogleReviewComponent, BannerComponent],
+  imports: [ HeroComponent, MarqueeComponent, CategorySectionComponent, BusinessDetailsComponent, GoogleReviewComponent, BannerComponent, FaqComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

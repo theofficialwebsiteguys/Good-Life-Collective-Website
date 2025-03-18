@@ -142,7 +142,7 @@ li {
   max-width: 1200px;
   margin: 30px auto 0;
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
   color: #555;
   line-height: 1.5;
   padding-top: 15px;
@@ -200,7 +200,24 @@ li {
   }
 
   .footer-legal {
-    font-size: 11px; /* Smaller text for mobile */
+    font-size: 14px; /* Smaller text for mobile */
     padding: 10px;
   }
+}
+
+
+.warning {
+  font-weight: bold;
+  color: red;
+}
+
+.bold-red {
+  font-weight: bold;
+  color: red;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
 }

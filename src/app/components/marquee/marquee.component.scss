@@ -62,3 +62,25 @@
 .marquee:focus {
   animation-play-state: paused;
 }
+
+
+@media (max-width: 768px) {
+  .marquee span:nth-child(2) {
+    display: none;
+  }
+
+  /* Adjust the animation for a single span */
+  .marquee {
+    min-width: 100%;
+    animation: scroll-left-mobile 15s linear infinite;
+  }
+}
+
+@keyframes scroll-left-mobile {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

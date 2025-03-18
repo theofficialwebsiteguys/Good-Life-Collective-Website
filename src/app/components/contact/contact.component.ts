@@ -8,7 +8,7 @@ import { ContactComponent as ContactComponentShop} from 'shop-components';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, BusinessDetailsComponent, HeroComponent, MarqueeComponent, ContactComponentShop],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, BusinessDetailsComponent, HeroComponent, ContactComponentShop],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

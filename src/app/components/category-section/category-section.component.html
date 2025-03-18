@@ -5,7 +5,14 @@
   <!-- PRODUCT CAROUSEL -->
   <div class="product-carousel-section" role="region" aria-labelledby="newest-products-heading">
     <h2 id="newest-products-heading" class="section-title">Check Out Our Newest Products</h2>
-    <lib-recent-products-carousel></lib-recent-products-carousel>
+
+    <!-- Loading Spinner (Shown when isLoading is true) -->
+    <div class="spinner-container" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <!-- Carousel (Shown when isLoading is false) -->
+    <lib-recent-products-carousel *ngIf="!isLoading"></lib-recent-products-carousel>
   </div>
   
   <!-- CATEGORY CAROUSEL -->

@@ -1,0 +1,25 @@
+<section class="hero-section" role="banner" aria-labelledby="hero-heading">
+    <h2 id="hero-heading" class="visually-hidden">Upcoming Events - Download Our App</h2>
+  
+    <app-hero
+      singleImage="https://storage.googleapis.com/the-website-guys/Flower-Power/carousel9.jpg"
+      title="Learn About The Leaf!"
+      [subtitle]="''"
+      [buttons]="[]"
+      [heroHeight]="'30vh'">
+    </app-hero>
+  </section>
+  
+  <div class="blog-container">
+    <div class="blog-post" *ngFor="let blog of blogs">
+      <div class="blog-content">
+        <h2>{{ blog.title }}</h2>
+        <p>{{ blog.description }}</p>
+        <a [routerLink]="['/blog', blog.id]">Read More</a>
+      </div>
+      <div class="blog-image">
+        <img [src]="blog.image" alt="{{ blog.title }}">
+      </div>
+    </div>
+  </div>
+  

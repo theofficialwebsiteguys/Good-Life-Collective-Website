@@ -7,6 +7,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { BudtenderSalesComponent, DashboardComponent, OrdersComponent, UsersComponent, ToolsComponent, OverviewComponent } from 'admin-dashboard';
+import { EventsComponent } from './components/events/events.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -19,6 +22,9 @@ export const routes: Routes = [
     { path: 'confirmation', component: ConfirmationComponent },
     { path: 'loyalty', component: LoyaltyComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'events', component: EventsComponent },
+    { path: 'blog', component: BlogComponent },
+    { path: 'blog/:id', component: BlogDetailComponent },
     { path: 'contact', component: ContactComponent },
     {
         path: 'dashboard',

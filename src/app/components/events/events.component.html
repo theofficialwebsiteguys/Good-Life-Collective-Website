@@ -1,0 +1,35 @@
+<section class="hero-section" role="banner" aria-labelledby="hero-heading">
+  <!-- Updated heading to reference "Events" -->
+  <h2 id="hero-heading" class="visually-hidden">Upcoming Events - Download Our App</h2>
+
+  <app-hero
+    singleImage="https://storage.googleapis.com/the-website-guys/Flower-Power/carousel2.jpg"
+    title="Don’t Miss Our Upcoming Events!"
+    [subtitle]="'Stay in the loop with our latest happenings.'"
+    [buttons]="[]"
+    [heroHeight]="'30vh'">
+  </app-hero>
+</section>
+
+
+  <section class="events-section">
+    <div *ngFor="let month of eventsByMonth | keyvalue" class="month-section">
+        <h2 class="month-title">{{ month.key }}</h2>
+        <div class="events-grid">
+          <div *ngFor="let event of month.value" class="event-card">
+            <img [src]="event.image" alt="{{ event.title }}" class="event-img">
+            <div class="event-details">
+              <h3 class="event-title">{{ event.title }}</h3>
+              <p class="event-date"> <i class="fa-solid fa-clock" aria-hidden="true"></i> {{ event.dateTime | date: 'EEEE, MMM d - h:mm a' }}</p>
+              <p class="event-location"> <i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ event.location }}</p>
+              <p class="event-description">{{ event.description }}</p>
+              <!-- <button class="btn btn-primary" [disabled]="event.status === 'sold out'">
+                {{ event.status === 'sold out' ? 'Sold Out' : 'Get Tickets' }}
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+  
