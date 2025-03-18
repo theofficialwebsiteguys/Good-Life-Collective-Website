@@ -8,10 +8,11 @@ import { CommonModule } from '@angular/common';
 
 import { ConfigService } from 'shop-components'
 import { environment } from '../environments/environment';
+import { VerificationComponent } from './components/verification/verification.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, FooterComponent, TopBarComponent, NavbarComponent],
+  imports: [CommonModule, RouterOutlet, FooterComponent, TopBarComponent, NavbarComponent, VerificationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -20,9 +21,14 @@ export class AppComponent {
   isDashboardRoute = false;
 
   constructor(private router: Router, private configService: ConfigService) {
+
     this.configService.setApiKey(environment.db_api_key);
+    console.log(   this.configService.getApiKey())
   }
 
+  onAgeVerified() {
+    console.log('Age verified. Allowing access.');
+  }
 
   ngOnInit() {
     this.router.events.pipe(

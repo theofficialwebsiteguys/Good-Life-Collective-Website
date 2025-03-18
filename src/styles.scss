@@ -20,6 +20,13 @@ $white: #FFFFFF;
 $gray-light: #EAEAEA;
 $gray-dark: #757575;
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+
 // Global Styles
 body {
   h1, h2, li{
