@@ -21,9 +21,7 @@ export class AppComponent {
   isDashboardRoute = false;
 
   constructor(private router: Router, private configService: ConfigService) {
-
     this.configService.setApiKey(environment.db_api_key);
-    console.log(   this.configService.getApiKey())
   }
 
   onAgeVerified() {
