@@ -31,14 +31,19 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
+    ).subscribe((event: NavigationEnd) => {
       this.isDashboardRoute = event.url.startsWith('/dashboard');
-    });
-    
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scrolling to top
-      }
+  
+      // 🔥 Push a GTM page_view event
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'page_view',
+        page_path: event.urlAfterRedirects
+      });
+  
+      // 🔄 Smooth scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+  
 }
