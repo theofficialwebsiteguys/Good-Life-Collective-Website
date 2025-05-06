@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ReviewsService } from '../../reviews.service';
+import { BannersService } from '../../banners.service';
 
 @Component({
   selector: 'app-hero',
@@ -19,24 +21,45 @@ export class HeroComponent {
   @Input() heroHeight: string = '60vh'; // Default height for main pages
 
   
-  images: string[] = [
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel10.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel3.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel4.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel5.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel6.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel7.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel8.jpg',
-    'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel9.jpg'
-  ];
+  // images: string[] = [
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel10.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel3.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel4.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel5.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel6.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel7.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel8.jpg',
+  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel9.jpg'
+  // ];
+  banners: { image: string; title: string; description: string }[] = [];
   currentIndex: number = 0;
   intervalId: any;
+
+  constructor(private bannersService: BannersService){}
 
   ngOnInit(): void {
     if (!this.singleImage) {
       // If no single image is provided, start the carousel
+      this.loadCarouselImages();
       this.startCarousel();
     }
+  }
+
+  loadCarouselImages() {
+    this.bannersService.getCarouselImages().subscribe(
+      response => {
+        console.log(response)
+        this.banners = response.images.map((imgUrl, index) => ({
+          image: `${imgUrl}?v=${new Date().getTime()}`,
+          title: `Carousel Image ${index + 1}`,
+          description: 'Flower Power Dispensary',
+        }));
+        console.log(this.banners)
+      },
+      error => {
+        console.error('Error fetching carousel images:', error);
+      }
+    );
   }
 
   startCarousel(): void {
@@ -46,11 +69,11 @@ export class HeroComponent {
   }
 
   nextSlide(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.currentIndex = (this.currentIndex + 1) % this.banners.length;
   }
 
   prevSlide(): void {
-    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+    this.currentIndex = (this.currentIndex - 1 + this.banners.length) % this.banners.length;
   }
 
   ngOnDestroy(): void {

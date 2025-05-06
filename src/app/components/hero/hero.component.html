@@ -1,4 +1,12 @@
-<section class="hero" role="banner" aria-labelledby="hero-title" [ngStyle]="{'background-image': 'url(' + (singleImage ? singleImage : images[currentIndex]) + ')', 'height': heroHeight}">
+<section
+  class="hero"
+  role="banner"
+  aria-labelledby="hero-title"
+  [ngStyle]="{
+    'background-image': 'url(' + (singleImage ? singleImage : banners[currentIndex].image) + ')',
+    'height': heroHeight
+  }"
+>
   <div class="overlay" aria-hidden="true"></div>
   <div class="hero-content">
     <h1 id="hero-title">{{ title }}</h1>
