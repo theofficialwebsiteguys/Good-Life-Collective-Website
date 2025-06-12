@@ -1,0 +1,31 @@
+<div class="download-container">
+
+  <h1>Install Our Android App</h1>
+
+  <p class="description">
+    This app is available as a direct download. It’s safe, secure, and built specifically for Android devices.
+  </p>
+
+  <a
+    href="https://flowerpowerdispensers.com/downloads/fpd-app.apk"
+    class="download-button"
+    download
+  >
+    Download Android App
+  </a>
+
+  <div class="install-instructions">
+    <h3>Installation Guide</h3>
+    <ol>
+      <li>Tap the button above to download the app</li>
+      <li>If prompted, allow downloads from your browser</li>
+      <li>Open the file from your Downloads and confirm installation</li>
+      <li>If needed, enable “Install Unknown Apps” in Settings</li>
+    </ol>
+  </div>
+
+  <div class="qr-section" *ngIf="showQR">
+    <p>Scan this QR code to open this page on your phone:</p>
+    <img src="assets/qr-code.png" alt="QR Code" class="qr-code" />
+  </div>
+</div>

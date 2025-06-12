@@ -10,6 +10,7 @@ import { BudtenderSalesComponent, DashboardComponent, OrdersComponent, UsersComp
 import { EventsComponent } from './components/events/events.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+import { AppDownloadComponent } from './components/app-download/app-download.component';
 
 
 export const routes: Routes = [
@@ -43,4 +44,9 @@ export const routes: Routes = [
           { path: '', redirectTo: 'overview', pathMatch: 'full' }
         ]
       },
+      {
+        path: 'appdownload',
+        component: AppDownloadComponent
+      }
+
 ];
