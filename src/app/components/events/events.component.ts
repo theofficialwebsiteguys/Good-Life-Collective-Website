@@ -12,6 +12,8 @@ import { EventsService, Event } from '../../events.service';
 export class EventsComponent {
   eventsByMonth: { [key: string]: Event[] } = {};
 
+  selectedEvent: Event | null = null;
+
   constructor(private eventsService: EventsService) {}
 
   ngOnInit() {
@@ -30,5 +32,13 @@ export class EventsComponent {
       acc[month].push(event);
       return acc;
     }, {} as { [key: string]: Event[] });
+  }
+
+  openModal(event: Event) {
+    this.selectedEvent = event;
+  }
+
+  closeModal() {
+    this.selectedEvent = null;
   }
 }

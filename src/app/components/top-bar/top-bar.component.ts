@@ -18,7 +18,7 @@ export class TopBarComponent {
     { day: 2, open: 8, close: 22 },  // Tuesday: 8AM - 10PM
     { day: 3, open: 8, close: 22 },  // Wednesday: 8AM - 10PM
     { day: 4, open: 8, close: 22 },  // Thursday: 8AM - 10PM
-    { day: 5, open: 10, close: 23 }, // Friday: 10AM - 11PM
+    { day: 5, open: 8, close: 23 }, // Friday: 10AM - 11PM
     { day: 6, open: 10, close: 23 }  // Saturday: 10AM - 11PM
   ];
 

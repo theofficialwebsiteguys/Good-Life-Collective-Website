@@ -16,7 +16,7 @@
     <div *ngFor="let month of eventsByMonth | keyvalue" class="month-section">
         <h2 class="month-title">{{ month.key }}</h2>
         <div class="events-grid">
-          <div *ngFor="let event of month.value" class="event-card">
+          <div *ngFor="let event of month.value" class="event-card" (click)="openModal(event)">
             <img [src]="event.image" alt="{{ event.title }}" class="event-img">
             <div class="event-details">
               <h3 class="event-title">{{ event.title }}</h3>
@@ -33,3 +33,16 @@
       
   </section>
   
+  <!-- Modal -->
+<div class="event-modal" *ngIf="selectedEvent" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <img [src]="selectedEvent.image" [alt]="selectedEvent.title" />
+    <div class="modal-details">
+      <h2>{{ selectedEvent.title }}</h2>
+      <p><i class="fa-solid fa-clock"></i> {{ selectedEvent.dateTime | date: 'fullDate' }} at {{ selectedEvent.dateTime | date: 'shortTime' }}</p>
+      <p><i class="fa-solid fa-location-dot"></i> {{ selectedEvent.location }}</p>
+      <p>{{ selectedEvent.description }}</p>
+      <button class="btn" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
