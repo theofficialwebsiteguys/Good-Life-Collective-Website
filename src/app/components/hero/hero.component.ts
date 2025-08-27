@@ -16,7 +16,7 @@ export class HeroComponent {
   @Input() subtitle: string = "Premium Recreational Cannabis Dispensary. Order now for pickup or FREE delivery today."; // Dynamic Subtitle
   @Input() buttons: { text: string; class: string; link?: string }[] = [
     { text: "Shop", class: "btn-primary", link: "/shop" },
-    { text: "Mobile App", class: "btn-secondary", link: "/loyalty"  }
+    { text: "About Us", class: "btn-secondary", link: "/about"  }
   ];
   @Input() heroHeight: string = '70vh'; // Default height for main pages
 
