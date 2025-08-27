@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { authGuard, CartComponent, CheckoutComponent, ConfirmationComponent, ForgotPasswordComponent, LoginComponent, MerchShopComponent, RegisterComponent, ResetPasswordComponent, SingleProductComponent } from 'shop-components'
+import { authGuard, CartComponent, CheckoutComponent, ConfirmationComponent, ForgotPasswordComponent, LoginComponent, RegisterComponent, ResetPasswordComponent, SingleProductComponent } from 'shop-components'
 import { LoyaltyComponent } from './components/loyalty/loyalty.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
@@ -11,6 +11,7 @@ import { EventsComponent } from './components/events/events.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import { AppDownloadComponent } from './components/app-download/app-download.component';
+import { MerchShopComponent } from './components/merch-shop/merch-shop.component';
 
 
 export const routes: Routes = [

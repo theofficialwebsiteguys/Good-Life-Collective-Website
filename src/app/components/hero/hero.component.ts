@@ -11,7 +11,7 @@ import { BannersService } from '../../banners.service';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  @Input() singleImage: string | null = 'assets/good-life-banner.jpg'; // Image for static pages
+  @Input() singleImage: string | null = 'https://storage.googleapis.com/the-website-guys/Good-Life-Collective-Rochester/carousel2.png'; // Image for static pages
   @Input() title: string = "Welcome To Good Life Collective Dispensers"; // Dynamic Title
   @Input() subtitle: string = "Premium Recreational Cannabis Dispensary. Order now for pickup or FREE delivery today."; // Dynamic Subtitle
   @Input() buttons: { text: string; class: string; link?: string }[] = [

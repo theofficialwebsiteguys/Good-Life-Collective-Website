@@ -4,6 +4,7 @@
   padding: 2rem;
   text-align: center;
   font-family: 'Segoe UI', Roboto, sans-serif;
+  color: white;
 
   .app-icon {
     width: 80px;
@@ -18,7 +19,6 @@
   .description {
     font-size: 1rem;
     margin-bottom: 1.5rem;
-    color: #555;
   }
 
   .download-button {
@@ -40,7 +40,6 @@
     text-align: left;
     margin: 2rem auto;
     max-width: 400px;
-    background: #f9f9f9;
     padding: 1rem 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -53,7 +52,6 @@
     ol {
       padding-left: 1.25rem;
       line-height: 1.6;
-      color: #333;
     }
   }
 

@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ShopComponent as ShopComponentLib, CategoriesComponent, AdBannerComponent} from 'shop-components';
+import { MerchShopComponent as MerchShopComponentLib, CategoriesComponent, AdBannerComponent} from 'shop-components';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-merch-shop',
-  imports: [CommonModule, ShopComponentLib, CategoriesComponent, AdBannerComponent, MatProgressSpinnerModule],
-  templateUrl: './shop.component.html',
-  styleUrl: './shop.component.scss'
+  imports: [CommonModule, MerchShopComponentLib, CategoriesComponent, AdBannerComponent, MatProgressSpinnerModule],
+  templateUrl: './merch-shop.component.html',
+  styleUrl: './merch-shop.component.scss'
 })
 export class MerchShopComponent {
   isLoading = true; // Initially true to show spinner
