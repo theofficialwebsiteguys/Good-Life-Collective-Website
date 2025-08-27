@@ -7,7 +7,7 @@ import { filter } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 import { ConfigService } from 'shop-components'
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { VerificationComponent } from './components/verification/verification.component';
 
 @Component({
