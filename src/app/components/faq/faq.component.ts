@@ -16,12 +16,12 @@ export class FaqComponent {
       open: false
     },
     {
-      question: 'Who is eligible to purchase from Flower Power?',
+      question: 'Who is eligible to purchase from Good Life Collective?',
       answer: 'Individuals who are at least 21 years old and possess a valid government-issued photo ID can purchase cannabis products from our dispensary.',
       open: false
     },
     {
-      question: 'What types of products does Flower Power offer?',
+      question: 'What types of products does Good Life Collective offer?',
       answer: 'We offer a diverse range of cannabis products, including flower, edibles, concentrates, tinctures, topicals, and more. Our selection is curated to cater to various preferences and needs of our customers. Check out our shop.',
       open: false
     },
@@ -32,7 +32,7 @@ export class FaqComponent {
     },
     {
       question: 'Who are Budtenders?',
-      answer: 'Budtenders play a vital role in the functioning of the Flower Power community by providing personalized assistance and guidance to customers, promoting responsible cannabis consumption, and ensuring compliance with regulations. Whether going for a walk in Central Park, a show in Lincoln Center, or a 5-star meal on Columbus Avenue, our Budtenders have the right product for you.',
+      answer: 'Budtenders play a vital role in the functioning of the Good Life Collective community by providing personalized assistance and guidance to customers, promoting responsible cannabis consumption, and ensuring compliance with regulations. Whether going for a walk in Central Park, a show in Lincoln Center, or a 5-star meal on Columbus Avenue, our Budtenders have the right product for you.',
       open: false
     },
     {
@@ -46,13 +46,13 @@ export class FaqComponent {
       open: false
     },
     {
-      question: 'How do I sell my cannabis brand at Flower Power?',
+      question: 'How do I sell my cannabis brand at Good Life Collective?',
       answer: 'We\'re thrilled that you\'re interested in partnering with us. Let\'s bring legal cannabis to the masses. Reach out to flowerpowerdispensersmarketing@gmail.com to get started!',
       open: false
     },
     {
-      question: 'How do I get to Flower Power Dispensers?',
-      answer: 'Flower Power Dispensers is conveniently located at 22 West 66th Street, NY, NY, 10023, just steps away from Lincoln Center, Columbus Circle, and Central Park. Depending on your mode of transportation, here are some common routes:\n\nPublic Transit (Subway/Bus): You can take the subway to the 66th Street-Lincoln Center Station, which is served by the 1 train. From there, it\'s just a short walk eastward on 66th Street to reach Flower Power Dispensers. There\'s also the A/B/C/D trains at Columbus Circle, and the N/R/Q/W trains on 57th and 7th Avenue. FPD is a 5-minute walk from all of these trains. The M20 bus stops right in front of our entrance.\n\nDriving: If you\'re driving, you can use GPS navigation or a map application to guide you to the address. Be mindful of parking regulations in the area and consider using paid parking facilities nearby. There\'s a parking garage next to Flower Power.\n\nWalking: If you\'re already in the vicinity, walking can be a convenient option. Flower Power Dispensers is situated on 66th Street, between Central Park West and Columbus Avenue, making it easily accessible on foot.\n\nCycling: For cyclists, there are bike lanes available on many streets in New York City. You can plan your route using bike-friendly paths to reach Flower Power Dispensers safely.',
+      question: 'How do I get to Good Life Collective Dispensers?',
+      answer: 'Good Life Collective Dispensers is conveniently located at 22 West 66th Street, NY, NY, 10023, just steps away from Lincoln Center, Columbus Circle, and Central Park. Depending on your mode of transportation, here are some common routes:\n\nPublic Transit (Subway/Bus): You can take the subway to the 66th Street-Lincoln Center Station, which is served by the 1 train. From there, it\'s just a short walk eastward on 66th Street to reach Good Life Collective Dispensers. There\'s also the A/B/C/D trains at Columbus Circle, and the N/R/Q/W trains on 57th and 7th Avenue. FPD is a 5-minute walk from all of these trains. The M20 bus stops right in front of our entrance.\n\nDriving: If you\'re driving, you can use GPS navigation or a map application to guide you to the address. Be mindful of parking regulations in the area and consider using paid parking facilities nearby. There\'s a parking garage next to Good Life Collective.\n\nWalking: If you\'re already in the vicinity, walking can be a convenient option. Good Life Collective Dispensers is situated on 66th Street, between Central Park West and Columbus Avenue, making it easily accessible on foot.\n\nCycling: For cyclists, there are bike lanes available on many streets in New York City. You can plan your route using bike-friendly paths to reach Good Life Collective Dispensers safely.',
       open: false
     },
     {

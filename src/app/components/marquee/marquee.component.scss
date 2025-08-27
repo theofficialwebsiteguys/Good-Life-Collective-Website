@@ -1,86 +1,26 @@
-.marquee-container {
-  width: 100%;
+
+.announcement{
+  background: #8ff5ea;
+  color: #000000;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: .2px;
   overflow: hidden;
-  background: #2F4F2F;
-  padding: 15px 0;
-  position: relative;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
+  padding: 8px 0;
 }
-
-.marquee {
-  display: flex;
-  gap: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  text-transform: uppercase;
-  min-width: 200%;
-  animation: scroll-left 20s linear infinite;
+.rail{
+  display:flex;
+  gap:48px;
+  white-space:nowrap;
+  width:max-content;
+  animation:rail 28s linear infinite;
+  padding-inline:24px;
 }
-
-.marquee.paused {
-  animation-play-state: paused;
+.rail:hover{ animation-play-state:paused; }
+@keyframes rail {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
-
-.marquee span {
-  display: inline-block;
-  padding-right: 50px;
-  min-width: 100%;
-}
-
-@keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-/* Style for the pause/play control */
-.marquee-control {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s;
-}
-
-.marquee-control:hover {
-  background: rgba(0,0,0,0.9);
-}
-
-.marquee:hover,
-.marquee:focus {
-  animation-play-state: paused;
-}
-
-
-@media (max-width: 768px) {
-  .marquee span:nth-child(2) {
-    display: none;
-  }
-
-  /* Adjust the animation for a single span */
-  .marquee {
-    min-width: 100%;
-    animation: scroll-left-mobile 15s linear infinite;
-  }
-}
-
-@keyframes scroll-left-mobile {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+@media (max-width: 768px){
+  .rail{ gap:32px; animation-duration:20s; }
 }

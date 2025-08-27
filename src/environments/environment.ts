@@ -2,6 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:3333/api',
@@ -11,9 +12,10 @@ export const environment = {
   aeropay_api_secret: '13322af3-39fb-462d-865c-9f238b248abd',
   aeropay_url: "https://staging-api.aeropay.com",
   aeropay_merchant_id: 1760,
-  db_api_key: 'c69203dbdeaf88d28f3bfa28afeaff32965744f3d3ae6321b9eff6d198b1edfb'
+  db_api_key: 'caf0c918d083b815a16fe0546e3802de4423e9b33c26aba8e1fa2a614966978d',
+  flowhub_location_rochester: '0e443789-178c-45aa-aefb-e4f55fe46b84',
+  flowhub_location_canandaigua: '5294f212-7dfa-4171-8ac5-3de90e89f8cd'
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

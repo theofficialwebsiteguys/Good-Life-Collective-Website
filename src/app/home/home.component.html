@@ -1,25 +1,57 @@
 <main>
     <!-- Marquee Section -->
-    <section aria-label="Announcements">
-      <app-marquee></app-marquee>
-    </section>
+
   
     <!-- Hero Section -->
     <section aria-labelledby="hero-section-heading">
       <h2 id="hero-section-heading" class="visually-hidden">Main Promotional Banner</h2>
       <app-hero></app-hero>
     </section>
+
+        <section aria-label="Announcements">
+      <app-marquee></app-marquee>
+    </section>
+<!-- 
+    <section aria-labelledby="location-section-heading">
+      <h2 id="location-section-heading" class="visually-hidden">Location Selection</h2>
+      <lib-location-selection></lib-location-selection>
+    </section> -->
   
     <!-- Category and Shop Section -->
     <section aria-labelledby="category-section-heading">
       <h2 id="category-section-heading" class="visually-hidden">Product Categories and Shop</h2>
       <app-category-section></app-category-section>
     </section>
+
+      <div class="product-carousel-section" role="region" aria-labelledby="newest-products-heading">
+      <!-- Loading Spinner (Shown when isLoading is true) -->
+        <div class="spinner-container" *ngIf="isLoading">
+          <mat-spinner></mat-spinner>
+        </div>
+
+        <!-- Carousel (Shown when isLoading is false) -->
+        <lib-products-carousel category="Flower" [limit]="10"></lib-products-carousel>
+        <lib-products-carousel category="Vapes" [limit]="10"></lib-products-carousel>
+        <lib-products-carousel category="Edibles" [limit]="10"></lib-products-carousel>
+        <lib-products-carousel category="Concentrates" [limit]="10"></lib-products-carousel>
+        <lib-products-carousel category="Pre-Roll" [limit]="10"></lib-products-carousel>
+      </div>
+    
   
     <!-- Business Details Section -->
     <section aria-labelledby="business-details-heading">
       <h2 id="business-details-heading" class="visually-hidden">Business Details</h2>
-      <app-business-details></app-business-details>
+      <app-business-details
+        [lat]="43.1566"
+        [lng]="-77.6088"
+        [address]="'123 Example St, Rochester, NY 14604'"
+        [phone]="'585-555-1234'"
+        [hours]="[
+          'Monday – Thursday: 10:00 AM – 9:00 PM',
+          'Friday – Saturday: 10:00 AM – 10:00 PM',
+          'Sunday: 11:00 AM – 7:00 PM'
+        ]"
+      ></app-business-details>
     </section>
   
     <!-- Customer Reviews Section -->
@@ -29,14 +61,14 @@
     </section>
   
     <!-- Promotional Banner Section -->
-    <section aria-labelledby="banner-section-heading">
+    <!-- <section aria-labelledby="banner-section-heading">
       <h2 id="banner-section-heading" class="visually-hidden">Promotional Banner</h2>
       <app-banner></app-banner>
-    </section>
+    </section> -->
 
-    <section aria-labelledby="banner-section-heading">
+    <!-- <section aria-labelledby="banner-section-heading">
       <h2 id="banner-section-heading" class="visually-hidden">FAQ</h2>
       <app-faq></app-faq>
-    </section>
+    </section> -->
   </main>
   

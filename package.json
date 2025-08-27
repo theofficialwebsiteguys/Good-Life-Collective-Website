@@ -27,7 +27,7 @@
     "file-saver": "^2.0.5",
     "ng2-charts": "^8.0.0",
     "rxjs": "~7.8.0",
-    "shop-components": "file:../../shop-components-0.0.1.tgz",
+    "shop-components": "file:../../good-life-shop-components-0.0.1.tgz",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

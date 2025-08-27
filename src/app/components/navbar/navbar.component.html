@@ -1,27 +1,64 @@
-<nav class="navbar" role="navigation" aria-label="Main Navigation">
-  <div class="logo">
-    <a [routerLink]="'/'">
-      <img src="assets/fpd-logo-naked.png" alt="Flower Power Dispensers Logo">
-    </a>
-  </div>
-
-  <ul class="menu" [ngClass]="{'active': menuOpen}">
-    <li><a [routerLink]="'/shop'" (click)="closeMenu()">Shop Now</a></li>
-    <li><a [routerLink]="'/loyalty'" (click)="closeMenu()">Mobile App</a></li>
-    <li><a [routerLink]="'/events'" (click)="closeMenu()">Events</a></li>
-    <li><a [routerLink]="'/about'" (click)="closeMenu()">About</a></li>
-    <li><a [routerLink]="'/blog'" (click)="closeMenu()">Blog</a></li>
-    <li><a href="https://flower-power-shop.fourthwall.com/" target="_blank" (click)="closeMenu()">Merch Store</a></li>
-    <li><a [routerLink]="'/contact'" (click)="closeMenu()">Contact</a></li>
+<!-- navbar.component.html -->
+<nav class="nav" role="navigation" aria-label="Primary">
+  <ul class="menu">
+    <li><a [routerLink]="'/shop'">Shop</a></li>
+    <li><a [routerLink]="'/merch-shop'">Merch</a></li>
+    <!-- <li><a [routerLink]="'/loyalty'" (click)="closeMenu()">Mobile App</a></li> -->
+    <li><a [routerLink]="'/events'">Events</a></li>
+    <li><a [routerLink]="'/about'">About</a></li>
+    <!-- <li><a [routerLink]="'/blog'" (click)="closeMenu()">Blog</a></li> -->
+    <!-- <li><a [routerLink]="'/contact'">Contact</a></li> -->
   </ul>
 
-  <div class="search-cart">
-    <lib-cart-icon></lib-cart-icon>
-    <lib-auth-nav></lib-auth-nav>
-    <button class="hamburger" (click)="toggleMenu()"
-            [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"
-            [attr.aria-expanded]="menuOpen">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-    </button>
+  <div class="right">
+    <lib-location-dropdown></lib-location-dropdown>
+    <lib-cart-icon iconColor="black"></lib-cart-icon>
+    <lib-auth-nav iconColor="black"></lib-auth-nav>
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </nav>
+
+
+
+<div class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <button class="close-btn" (click)="toggleMenu()">×</button>
+
+  <ul>
+    <li><a [routerLink]="'/shop'" (click)="toggleMenu()">Shop</a></li>
+    <!-- <li><a [routerLink]="'/loyalty'" (click)="toggleMenu()">Mobile App</a></li> -->
+    <li><a [routerLink]="'/events'" (click)="toggleMenu()">Events</a></li>
+    <li><a [routerLink]="'/about'" (click)="toggleMenu()">About</a></li>
+    <!-- <li><a [routerLink]="'/blog'" (click)="toggleMenu()">Blog</a></li> -->
+    <li><a [routerLink]="'/merch-shop'" (click)="toggleMenu()">Merch</a></li>
+    <li><a [routerLink]="'/contact'" (click)="toggleMenu()">Contact</a></li>
+  </ul>
+
+  <!-- Logo + Social Icons -->
+  <div class="mobile-footer">
+    <a routerLink="/">
+       <img
+        [src]="'assets/its-a-lifestyle.svg'"
+        class="logo"
+        alt="Company logo"
+      />
+    </a>
+
+    <div class="social-icons">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="nav-accent-bar"></div>
+
+
+<!-- Bottom Navigation Bar -->
+

@@ -11,14 +11,14 @@ import { BannersService } from '../../banners.service';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  @Input() singleImage: string | null = null; // Image for static pages
-  @Input() title: string = "Welcome To Flower Power Dispensers"; // Dynamic Title
-  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary.<br>Order now for pickup or FREE delivery today."; // Dynamic Subtitle
+  @Input() singleImage: string | null = 'assets/good-life-banner.jpg'; // Image for static pages
+  @Input() title: string = "Welcome To Good Life Collective Dispensers"; // Dynamic Title
+  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary. Order now for pickup or FREE delivery today."; // Dynamic Subtitle
   @Input() buttons: { text: string; class: string; link?: string }[] = [
     { text: "Shop", class: "btn-primary", link: "/shop" },
     { text: "Mobile App", class: "btn-secondary", link: "/loyalty"  }
   ];
-  @Input() heroHeight: string = '60vh'; // Default height for main pages
+  @Input() heroHeight: string = '70vh'; // Default height for main pages
 
   
   // images: string[] = [
@@ -52,7 +52,7 @@ export class HeroComponent {
         this.banners = response.images.map((imgUrl, index) => ({
           image: `${imgUrl}?v=${new Date().getTime()}`,
           title: `Carousel Image ${index + 1}`,
-          description: 'Flower Power Dispensary',
+          description: 'Good Life Collective Dispensary',
         }));
         console.log(this.banners)
       },

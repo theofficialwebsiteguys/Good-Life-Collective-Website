@@ -1,292 +1,153 @@
-/* Full-width section */
-.dispensary-container {
-    background-color: #2F4F2F;
-    color: #fff;
-    padding: 60px 5%;
-    width: 100vw;
-    max-width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    position: relative; /* Needed for absolute positioning on mobile */
-  }
-
-
-  h3{
-    margin: 0;
-  }
-  
-  /* LEFT: Info Section */
-  .info-section {
-    flex: 1;
-    max-width: 50%;
-    z-index: 2; /* Ensures info stays on top */
-  }
-  
-  
-  /* Title & Description */
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: 'Brush Script MT', cursive;
-    margin-bottom: 15px;
-  }
-  
-  .description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  /* Announcement Highlight */
-  .announcement {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .highlight {
-    color: #FFD700;
-  }
-  
-  /* Info Boxes */
-  .details-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-  }
-  
-  .detail-box {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 15px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  
-  .detail-icon {
-    font-size: 1.4rem;
-  }
-  
-  .detail-text {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  /* RIGHT: Map Section */
-  .map-section {
-    flex: 1;
-    height: 800px;
-    min-height: 450px;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    position: relative; /* Default relative positioning */
-    margin-top: 20px;
-  }
-  
-  /* Ensure Google Map Fills the Area */
-  google-map {
-    width: 100%;
-    height: 100%;
-    min-height: 450px;
-    border-radius: 12px;
-  }
-
-  @media (max-width: 1024px) {
-    .dispensary-container {
-      height: 1400px;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 5%;
-      position: relative; /* Make sure container contains the map */
-    }
-  
-    .info-section {
-      max-width: 100%;
-      text-align: center;
-      position: relative;
-      z-index: 2; /* Ensure text stays above the map */
-    }
-  
-    .map-section {
-      width: 100%;
-      height: 400px;
-      min-height: 400px;
-      position: absolute; /* Keep absolute, but within the container */
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1; /* Keep it behind the text */
-    }
-  
-    google-map {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .dispensary-container {
-        height: 1400px;
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 5%;
-        position: relative; /* Make sure container contains the map */
-      }
-
-    .map-section {
-      height: 350px;
-      min-height: 350px;
-    }
-  
-    google-map {
-      height: 100%;
-      min-height: 350px;
-    }
+.glc-section {
+  color: #ffffff; /* White text */
+  padding: clamp(32px, 4vw, 64px) min(5vw, 48px);
 }
 
-    @media (max-width: 425px) {
-        .dispensary-container {
-            height: 1600px;
-          }
-  }
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: stretch;
+}
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    overflow: hidden;
-  }
-  
-  a{
-    text-decoration: underline;
-    color: inherit;
-  }
-
-
-
-/* General banner container */
-.coming-soon-banner {
-  width: 100%;
+.panel {
+  background: #000000; /* Black panels */
+  border: 1px solid #222222; /* Subtle border */
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-.coming-soon-banner.with-text {
+.content {
+  padding: clamp(20px, 2.4vw, 32px);
+}
+
+.header {
+  margin-bottom: 12px;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000000; /* Muted gray */
+  border: 1px solid #222222;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #ffffff;
+}
+.title {
+  margin: 10px 0 4px;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+}
+.subtitle {
+  margin: 0 0 8px;
+  color: #b0b0b0;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+}
+
+/* Body copy */
+.story {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+  line-height: 1.6;
+  font-size: 1.02rem;
+  color: #ffffff;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.badge {
+  border: 1px solid #222222;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #000000;
+}
+
+/* Details list */
+.details {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+.detail {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px dashed #222222;
+  color: #ffffff;
+}
+.detail:first-child { border-top: 0; }
+.detail i { color: #ffd166; font-size: 1.1rem; margin-top: 2px; }
+.detail h4 { margin: 0 0 2px; font-size: 0.95rem; color: #b0b0b0; font-weight: 700; }
+.detail a { color: #ffffff; text-decoration: underline; text-underline-offset: 2px; }
+.detail .hours { margin: 0; padding-left: 16px; }
+
+/* Map section */
+.map {
+}
+.map-card {
   position: relative;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  height: min(68vh, 560px);
+  min-height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000000;
 }
-
-/* Banner image */
-.coming-soon-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* Overlay */
-.coming-soon-banner .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+google-map {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  border-radius: 12px;
+  display: block;
 }
-
-/* Desktop overlay text */
-.banner-text {
+.map-footer {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-  padding: 20px 30px;
-  color: #FFD700;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  left: 12px;
+  bottom: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: saturate(160%) blur(6px);
+  border: 1px solid #222222;
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+.map-cta {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.banner-text .headline {
-  font-size: 2.8rem;
-  font-weight: 900;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .map-card {
+    height: 380px;
+  }
 }
 
-.banner-text .subheadline {
-  font-size: 1.8rem;
-  font-weight: 600;
-  font-family: 'Arial', sans-serif;
-  color: #fff;
-  letter-spacing: 0.5px;
-}
-
-/* Mobile-only banner text above image */
-.mobile-banner-announcement {
-  display: none;
-  text-align: center;
-  color: #FFD700;
-  border-radius: 12px;
-}
-
-.mobile-banner-announcement .headline {
-  font-size: 1.6rem;
-  font-weight: 900;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-
-.mobile-banner-announcement .subheadline {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .mobile-banner-announcement {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .banner-text-overlay {
-    display: none;
-  }
-
-  .banner-text .headline {
-    font-size: 1.6rem;
-  }
-
-  .banner-text .subheadline {
-    font-size: 1.1rem;
-  }
-
-  .banner-text {
-    padding: 15px 20px;
-    max-width: 90%;
-  }
-
-  .overlay{
-    display: none;
-  }
-
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); overflow: hidden;
 }

@@ -6,16 +6,15 @@
         <div class="review-header">
           <div class="review-avatar">
             <!-- Uncomment the image if available; otherwise the initials avatar is shown -->
-            <!--
+            
             <img *ngIf="review.sanitizedProfileUrl"
                  [src]="review.sanitizedProfileUrl"
                  alt="Reviewer Avatar"
-                 loading="eager"
-                 (error)="usePlaceholder($event)" />
-            -->
-            <div class="initials-avatar">
+                 loading="eager" />
+           
+            <!-- <div class="initials-avatar">
               <h4>{{ getInitials(review.author_name) }}</h4>
-            </div>
+            </div> -->
           </div>
           <div class="review-info">
             <h3 class="review-author">{{ review.author_name }}</h3>

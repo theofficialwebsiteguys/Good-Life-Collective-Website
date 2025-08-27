@@ -9,6 +9,17 @@ import { RouterModule } from '@angular/router';
   styleUrl: './top-bar.component.scss'
 })
 export class TopBarComponent {
+  // header-locations.component.ts (snippet)
+  locations = [
+    {
+      city: 'Rochester, NY',
+      hours: ['Sun–Thurs: 9am – 9pm', 'Fri–Sat: 9am – 10pm'],
+      note: 'Delivery Available'
+    },
+    { city: 'Canandaigua, NY', hours: ['Mon–Sat: 9am – 9pm', 'Sun: 11am – 6pm'] },
+    { city: 'Astoria, OR', hours: ['Mon–Sun: 9am – 9pm'] }
+  ];
+
   isOpen: boolean = false;
   currentTime: Date = new Date();
 

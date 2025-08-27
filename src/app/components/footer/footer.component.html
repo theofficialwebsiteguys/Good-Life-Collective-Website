@@ -1,78 +1,90 @@
-<footer class="footer" role="contentinfo">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="assets/fpd-logo-naked.png" alt="Flower Power Dispensers Logo" height="100" />
+<footer class="footer" role="contentinfo" aria-labelledby="footerTitle">
+  <h2 id="footerTitle" class="sr-only">Good Life Collective footer</h2>
+
+  <!-- TOP: brand + columns -->
+  <div class="ft-top">
+    <a class="brand" [routerLink]="'/'" aria-label="Home">
+      <img src="assets/good-life-logo.png" alt="Good Life Collective logo">
+    </a>
+
+    <!-- Shop -->
+    <details class="ft-col" open>
+      <summary class="ft-col__title">Shop</summary>
+      <ul class="ft-list">
+        <li><a [routerLink]="'/shop'" [queryParams]="{category: 'FLOWER'}">Flower</a></li>
+        <li><a [routerLink]="'/shop'" [queryParams]="{category: 'EDIBLE'}">Edibles</a></li>
+        <li><a [routerLink]="'/shop'" [queryParams]="{category: 'VAPE'}">Vapes</a></li>
+        <li><a [routerLink]="'/shop'" [queryParams]="{category: 'ACCESSORIES'}">Accessories</a></li>
+      </ul>
+    </details>
+
+    <!-- About -->
+    <details class="ft-col" open>
+      <summary class="ft-col__title">About Us</summary>
+      <ul class="ft-list">
+        <li><a [routerLink]="'/about'">About</a></li>
+        <li><a [routerLink]="'/contact'">Contact</a></li>
+        <li><a [routerLink]="'/loyalty'">Loyalty Program</a></li>
+      </ul>
+    </details>
+
+    <!-- Locations -->
+    <details class="ft-col ft-locations" open>
+      <summary class="ft-col__title">Locations</summary>
+      <ul class="loc-grid">
+        <!-- Rochester -->
+        <li class="loc-card">
+          <h4 class="loc-city">Rochester, NY</h4>
+          <address>155 Monroe Ave</address>
+          <a class="loc-phone" href="tel:15853602031">(585) 360-2031</a>
+          <ul class="hours">
+            <li><b>Sun–Thu</b> 9am–9pm</li>
+            <li><b>Fri–Sat</b> 9am–10pm</li>
+          </ul>
+        </li>
+
+        <!-- Canandaigua -->
+        <li class="loc-card">
+          <h4 class="loc-city">Canandaigua, NY</h4>
+          <address>230 S. Main St</address>
+          <a class="loc-phone" href="tel:15854126174">(585) 412-6174</a>
+          <ul class="hours">
+            <li><b>Mon–Sat</b> 9am–9pm</li>
+            <li><b>Sun</b> 11am–6pm</li>
+          </ul>
+        </li>
+
+        <!-- Astoria -->
+        <li class="loc-card">
+          <h4 class="loc-city">Astoria, OR</h4>
+          <address>193 Marine Dr</address>
+          <a class="loc-phone" href="tel:15033254078">(503) 325-4078</a>
+          <ul class="hours">
+            <li><b>Mon–Sun</b> 9am–9pm</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="ft-bottom">
+    <div class="socials" aria-label="Social media">
+      <a href="https://www.instagram.com/flowerpowerdispensers/#" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <!-- add more if needed -->
     </div>
 
-    <nav class="footer-links" aria-label="Footer Navigation">
-      <div class="footer-column">
-        <h3>Shop</h3>
-        <ul>
-          <li><a [routerLink]="'/shop'" [queryParams]="{category: 'FLOWER'}">Flower</a></li>
-          <li><a [routerLink]="'/shop'" [queryParams]="{category: 'EDIBLE'}">Edibles</a></li>
-          <li><a [routerLink]="'/shop'" [queryParams]="{category: 'VAPE'}">Vapes</a></li>
-          <li><a [routerLink]="'/shop'" [queryParams]="{category: 'ACCESSORIES'}">Accessories</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>About Us</h3>
-        <ul>
-          <li><a [routerLink]="'/contact'">Contact Us</a></li>
-          <li><a [routerLink]="'/about'">About</a></li>
-          <li><a [routerLink]="'/loyalty'">Loyalty Program</a></li>
-        </ul>
-      </div>
+    <p class="copyright">© Good Life Collective. All Rights Reserved.</p>
+
+    <nav class="policies" aria-label="Legal">
+      <a href="https://www.freeprivacypolicy.com/live/a6b892e2-76f4-4ae7-a261-d779fe5d70a0" target="_blank">Privacy</a>
+      <a [routerLink]="'/eula'">EULA</a>
+      <a [routerLink]="'/accessibility'">Accessibility</a>
     </nav>
-
-    <div class="footer-social">
-      <h3>Stay Connected</h3>
-      <p>Follow us for new drops, events &amp; cannabis news.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/flowerpowerdispensers/#" target="_blank" aria-label="Follow us on Instagram">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
   </div>
 
-  <div class="footer-subscribe">
-    <h3>Download our App to keep up with everything Flower Power!</h3>
-    <p>Sign up for exclusive offers, early drops, and special events.</p>
-    <button type="submit" class="subscribe-button" [routerLink]="'/loyalty'">Join Now</button>
-  </div>
-
-  <!-- Legal & Compliance Section -->
-  <div class="footer-legal">
-    <p><strong>OCM-CAURD-24-000101</strong></p>
-    
-    <p class="warning">For use only by adults <strong>21 years of age and older.</strong> 
-       <br> <strong>Keep out of reach of children and pets.</strong>
-    </p>
-    
-    <p class="warning">
-      In case of accidental ingestion or overconsumption, contact the 
-      <strong>National Poison Control Center</strong> hotline at 
-      <a href="tel:1-800-222-1222" class="highlighted">1-800-222-1222</a> or <strong>call 911.</strong> 
-      <br> <span class="bold-red">Please consume responsibly.</span>
-    </p>
-    
-    <p class="bold-red">Cannabis is <strong>not recommended</strong> for use by persons who are pregnant or nursing.</p>
-    
-    <p>
-      Concerned about your cannabis use? <br>
-      Text <strong class="highlighted">HOPENY</strong>, call 
-      <a href="tel:1-877-8-HOPENY" class="highlighted">1-877-8-HOPENY</a>, 
-      or visit 
-      <a href="https://oasas.ny.gov/HOPELine" target="_blank" class="highlighted">
-        oasas.ny.gov/HOPELine</a>.
-    </p>
-</div>
-
-
-  <div class="footer-bottom">
-    <p>&copy; 2024 Flower Power Dispensers | Crafted with Care</p>
-    <div class="footer-policies">
-      <a href="https://www.freeprivacypolicy.com/live/a6b892e2-76f4-4ae7-a261-d779fe5d70a0" target="_blank">Privacy Policy</a>
-    </div>
-  </div>
+  <!-- Optional: Legal block can stay on its page; if you must show it here, tuck it into a <details> -->
+  <!-- <details class="ft-legal"><summary>Compliance & Warnings</summary>…</details> -->
 </footer>

@@ -2,19 +2,36 @@
   class="hero"
   role="banner"
   aria-labelledby="hero-title"
-  [ngStyle]="{
-    'background-image': 'url(' + (singleImage ? singleImage : banners[currentIndex].image) + ')',
-    'height': heroHeight
-  }"
+  [style.backgroundImage]="'url(' + (singleImage ? singleImage : banners[currentIndex].image) + ')'"
+  [style.minHeight]="heroHeight || '80vh'"
 >
-  <div class="overlay" aria-hidden="true"></div>
-  <div class="hero-content">
-    <h1 id="hero-title">{{ title }}</h1>
-    <p [innerHTML]="subtitle"></p>
-    <div class="buttons">
-      <button *ngFor="let btn of buttons" [class]="btn.class" [routerLink]="btn.link">
-        {{ btn.text }}
-      </button>
+  <!-- left-to-right gradient for readability -->
+  <div class="overlay overlay--left" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- LEFT: SEO text -->
+    <div class="hero-text">
+      <h1 id="hero-title">{{ title }}</h1>
+      <p class="subtitle">{{ subtitle }}</p>
+      <div class="buttons">
+        <button *ngFor="let btn of buttons" [class]="btn.class" [routerLink]="btn.link">
+          {{ btn.text }}
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: brand logo -->
+    <div class="hero-aside">
+      <!-- If your H1 already contains the brand name, use alt="" to avoid redundancy -->
+      <div class="logo-card">
+        <img
+          class="brand-logo"
+          [src]="'assets/good-life-logo.png'"
+          [alt]="''"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
     </div>
   </div>
 </section>

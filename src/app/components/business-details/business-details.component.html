@@ -1,89 +1,59 @@
-  <!-- Coming Soon Banner -->
-  <!-- Mobile-Only Banner Text (above image) -->
+<section class="glc-section" aria-labelledby="glc-heading">
+  <h2 id="glc-heading" class="visually-hidden">About Good Life Collective</h2>
 
+  <div class="grid">
+    <!-- LEFT: Content -->
+    <article class="panel content" aria-label="Good Life Collective story and details">
+      <header class="header">
+        <div class="eyebrow">Rooted in Cannabis</div>
+        <h3 class="title">Good Life Collective</h3>
+        <p class="subtitle">Family-owned. Community-minded. Professionally curated.</p>
+      </header>
 
-  <!-- Coming Soon Banner -->
-  <div class="coming-soon-banner with-text">
-    <img src="assets/coming-soon-banner.png" alt="New Maspeth Queens Location Coming Soon">
-    <div class="overlay"></div>
-
-    <!-- Desktop overlay text -->
-    <div class="banner-text banner-text-overlay">
-      <div class="headline">NEW STORE. SECOND LOCATION.</div>
-      <div class="subheadline">Opening in Maspeth, Queens this Summer!</div>
-    </div>
-  </div>
-<section class="dispensary-container" aria-labelledby="business-details-heading">
-  <div class="mobile-banner-announcement">
-    <div class="headline">NEW STORE. SECOND LOCATION.</div>
-    <div class="subheadline">Opening in Maspeth, Queens this Summer!</div>
-  </div>
-
-  <!-- Visually Hidden Heading for Assistive Technologies -->
-  <h2 id="business-details-heading" class="visually-hidden">Business Details</h2>
-  
-  <!-- Info Section -->
-  <div class="info-section">
-    <h2 class="title">Visit or Order From Home</h2>
-    <p class="description">
-      Flower Power Dispensers (FPD) is an elegant, inviting and warm cannabis shop located on Manhattan's Upper West Side. 
-      Steps from Central Park, Lincoln Center, and Columbus Circle, FPD is New York City's curator of the best, top-quality legal, tested products for everyone 21 and over. 
-      <br><br>
-      <strong>Contact Us &#64; <a href="tel:6469160491">(646) 916-0491</a></strong>
-    
-    </p>
-  
-    <p class="announcement">
-      <strong>Download our app on iOS and Android and get <span class="highlight">FREE DELIVERY</span></strong>
-    </p>
-  
-    <!-- Details Section -->
-    <div class="details-container">
-      <div class="detail-box">
-        <span class="detail-icon">
-          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-        </span>
-        <div class="detail-text">
-          <h3>Hours</h3>
-          <p>Monday to Thursday: <strong>8:00 AM – 10:00 PM</strong></p>
-          <p>Friday: <strong>8:00 AM – 11:00 PM</strong></p>
-          <p>Saturday: <strong>10:00 AM – 11:00 PM</strong></p>
-          <p>Sunday: <strong>11:00 AM – 9:00 PM</strong></p>
-        </div>
+      <div class="story">
+        <p>
+          While Good Life Collective is new to the City of Rochester, it is not new to the cannabis industry.
+          The Hernandez Family, who owns and operates Good Life Collective, also owns and operates a Good Life
+          Collective retail store in <strong>Astoria, Oregon</strong>.
+        </p>
+        <p>
+          <strong>Hiram Hernandez, Jr.</strong> and his three adult children will each play a role in managing the
+          retail enterprises with the goal of providing the opportunity for the Hernandez family and others involved in
+          this venture to experience—just that—the <strong>Good Life</strong>.
+        </p>
+        <p>
+          We are excited to extend that Good Life to our staff, customers, and the community at large.
+        </p>
       </div>
-  
-      <div class="detail-box">
-        <span class="detail-icon">
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-        </span>
-        <div class="detail-text">
-          <h3>Address</h3>
-          <a href="https://www.google.com/maps/search/?q=22+West+66th+Street,+New+York,+NY+10023" target="_blank" rel="noopener noreferrer">
-            22 West 66th Street, New York, NY 10023
+
+      <!-- Quick facts / badges -->
+      <ul class="badges" aria-label="Quick facts">
+        <li class="badge">Family Owned</li>
+        <li class="badge">Community First</li>
+        <li class="badge">Multi-State Experience</li>
+      </ul>
+    </article>
+
+    <!-- RIGHT: Map -->
+    <aside class="panel map" aria-label="Map showing the Rochester location">
+      <div class="map-card">
+        <google-map
+          width="100%"
+          height="100%"
+          [center]="{ lat, lng }"
+          [zoom]="zoom">
+          <map-marker
+            [position]="{ lat, lng }"
+            title="Good Life Collective - Rochester">
+          </map-marker>
+        </google-map>
+        <div class="map-footer">
+          <a [href]="mapLink" target="_blank" rel="noopener" class="map-cta">
+            Open in Google Maps
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </div>
       </div>
-  
-      <div class="detail-box">
-        <span class="detail-icon">
-          <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
-        </span>
-        <div class="detail-text">
-          <h3>Payment Methods</h3>
-          <p>Cash, Debit card &amp; AeroPay.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Map Section -->
-  <div id="mapWrapper" class="map-section" aria-label="Map showing the location of Flower Power Dispensers">
-    <google-map
-      width="100%"
-      height="100%"
-      [center]="{lat: latitude, lng: longitude}"
-      [zoom]="zoom">
-      <map-marker [position]="{lat: latitude, lng: longitude}" title="Cannabis Dispensary"></map-marker>
-    </google-map>
+    </aside>
   </div>
 </section>

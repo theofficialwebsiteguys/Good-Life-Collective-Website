@@ -14,9 +14,12 @@
   .age-verification-box {
     background: white;
     padding: 20px;
-    text-align: center;
     border-radius: 10px;
     width: 500px;
+
+    img, p{
+      text-align: center;
+    }
   }
   
   .verification-text {
@@ -38,7 +41,6 @@
   }
   
   .yes-btn {
-    background-color: #25463d;
     color: white;
   }
   
@@ -47,3 +49,6 @@
     color: white;
   }
   
+  .content{
+    text-align: center;
+  }

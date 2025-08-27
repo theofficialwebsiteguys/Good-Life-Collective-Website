@@ -7,5 +7,6 @@ export const environment = {
   aeropay_api_secret: 'd5bd2c13-206e-4595-afe6-8fc2e0839f9e',
   aeropay_url: "https://api.aeropay.com",
   aeropay_merchant_id: 1689,
-  db_api_key: 'c69203dbdeaf88d28f3bfa28afeaff32965744f3d3ae6321b9eff6d198b1edfb'
+  db_api_key: 'caf0c918d083b815a16fe0546e3802de4423e9b33c26aba8e1fa2a614966978d',
+  location_rochester: '0e443789-178c-45aa-aefb-e4f55fe46b84'
 };

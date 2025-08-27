@@ -1,23 +1,34 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReviewsService } from '../../reviews.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
+interface ReviewItem {
+  id: string;                 // synthesized
+  author_name: string;
+  rating: number;             // 0..5
+  text: string;
+  time: number;               // seconds epoch
+  profile_photo_url?: string; // from API
+  profileResolvedUrl?: string | null; // after proxy/fallback
+}
 
 @Component({
   selector: 'app-google-review',
   imports: [CommonModule],
   templateUrl: './google-review.component.html',
-  styleUrl: './google-review.component.scss'
+  styleUrl: './google-review.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GoogleReviewComponent {
   reviews: any[] = [];
-  placeId = 'ChIJaewyJiZZwokRRTvQ3pXjVZk'; // Your Google Place ID
+  placeId = 'ChIJ-6MjXjC11okRI3zurNT5EF8'; // Your Google Place ID
 
   constructor(private googleReviewsService: ReviewsService, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    this.googleReviewsService.getReviews(this.placeId).subscribe(
-      response => {
+    this.googleReviewsService.getReviews(this.placeId).subscribe({
+      next: (response) => {
         this.reviews = response.map((review: any) => {
           const sanitizedUrl = review.profile_photo_url ? this.sanitizeUrl(review.profile_photo_url) : null;
   
@@ -33,10 +44,10 @@ export class GoogleReviewComponent {
           };
         });
       },
-      error => {
+      error: (error) => {
         console.error('Error fetching reviews:', error);
       }
-    );
+    });
   }
   
   usePlaceholder(event: any) {

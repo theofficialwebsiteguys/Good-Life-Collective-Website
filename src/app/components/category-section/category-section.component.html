@@ -3,24 +3,12 @@
   <h2 id="category-section-heading" class="visually-hidden">Product and Category Showcase</h2>
   
   <!-- PRODUCT CAROUSEL -->
-  <div class="product-carousel-section" role="region" aria-labelledby="newest-products-heading">
-    <h2 id="newest-products-heading" class="section-title">Check Out Our Newest Products</h2>
 
-    <!-- Loading Spinner (Shown when isLoading is true) -->
-    <div class="spinner-container" *ngIf="isLoading">
-      <mat-spinner></mat-spinner>
-    </div>
-
-    <!-- Carousel (Shown when isLoading is false) -->
-    <lib-recent-products-carousel *ngIf="!isLoading"></lib-recent-products-carousel>
-  </div>
-  
   <!-- CATEGORY CAROUSEL -->
   <div class="category-carousel-section" role="region" aria-labelledby="explore-categories-heading">
     <h2 id="explore-categories-heading" class="section-title">Explore Our Categories</h2>
-    <lib-categories [iconSet]="'playful'"></lib-categories>
+    <lib-categories [iconSet]="'gl-icons'"></lib-categories>
   </div>
-  
-  <!-- Shop Now Button -->
-  <button class="shop-button" [routerLink]="'/shop'" aria-label="Shop Now">Shop Now</button>
+
+  <!-- <button class="shop-button" [routerLink]="'/shop'" aria-label="Shop Now">Shop Now</button> -->
 </section>

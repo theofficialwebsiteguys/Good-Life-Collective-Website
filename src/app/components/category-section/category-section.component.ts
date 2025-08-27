@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ProductListComponent, CategoriesComponent, RecentProductsCarouselComponent } from 'shop-components'
+import { ProductListComponent, CategoriesComponent, ProductsCarouselComponent } from 'shop-components'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // ✅ Import Here
 
 @Component({
   selector: 'app-category-section',
-  imports: [CommonModule, CategoriesComponent, RecentProductsCarouselComponent, RouterModule, MatProgressSpinnerModule],
+  imports: [CommonModule, CategoriesComponent, ProductsCarouselComponent, RouterModule, MatProgressSpinnerModule],
   templateUrl: './category-section.component.html',
   styleUrl: './category-section.component.scss'
 })
