@@ -1,5 +1,31 @@
-<section class="ad-section" aria-labelledby="categories-heading">
-  <lib-ad-banner></lib-ad-banner>
+<section
+  class="hero"
+  role="banner"
+  aria-labelledby="hero-title"
+  [style.minHeight]="'50vh'"
+>
+  <div class="carousel-image-container">
+    <div 
+      class="carousel-image-item"
+      *ngFor="let banner of banners; let i = index"
+      [class.active]="i === currentIndex"
+      [style.backgroundImage]="'url(' + banner.image + ')'"
+      aria-hidden="true"
+    ></div>
+  </div>
+
+  <div class="overlay overlay--left" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <img
+        [src]="'assets/its-a-lifestyle.svg'"
+        class="logo"
+        alt="Company logo"
+      />
+    </div>
+  </div>
+
 </section>
 <!-- 
 <section class="categories-section" aria-labelledby="categories-heading" #shopSection>

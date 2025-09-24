@@ -6,7 +6,7 @@ import { LoyaltyComponent } from './components/loyalty/loyalty.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
-import { BudtenderSalesComponent, DashboardComponent, OrdersComponent, UsersComponent, ToolsComponent, OverviewComponent } from 'admin-dashboard';
+import { BudtenderSalesComponent, DashboardComponent, OrdersComponent, UsersComponent, ToolsComponent, OverviewComponent } from 'good-life-admin-dashboard';
 import { EventsComponent } from './components/events/events.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';

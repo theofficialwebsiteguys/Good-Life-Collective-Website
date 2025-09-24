@@ -8,16 +8,30 @@ import { BusinessDetailsComponent } from '../components/business-details/busines
 import { GoogleReviewComponent } from '../components/google-review/google-review.component';
 import { BannerComponent } from '../components/banner/banner.component';
 import { FaqComponent } from '../components/faq/faq.component';
-import { LocationSelectionComponent, ProductsCarouselComponent } from 'shop-components';
+import {
+  LocationSelectionComponent,
+  ProductsCarouselComponent,
+} from 'shop-components';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [ CommonModule, HeroComponent, MarqueeComponent, CategorySectionComponent, BusinessDetailsComponent, GoogleReviewComponent, BannerComponent, FaqComponent, LocationSelectionComponent, ProductsCarouselComponent, MatProgressSpinnerModule],
+  imports: [
+    CommonModule,
+    HeroComponent,
+    MarqueeComponent,
+    CategorySectionComponent,
+    BusinessDetailsComponent,
+    GoogleReviewComponent,
+    BannerComponent,
+    FaqComponent,
+    LocationSelectionComponent,
+    ProductsCarouselComponent,
+    MatProgressSpinnerModule,
+    FaqComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

@@ -1,7 +1,7 @@
 <section class="reviews-container" aria-labelledby="reviews-heading">
   <h2 id="reviews-heading" class="reviews-title">What Our Customers Say</h2>
   <div class="reviews-carousel" role="region" aria-label="Customer Reviews Carousel">
-    <div class="reviews-track" role="list">
+    <div *ngIf="reviews$ | async as reviews" class="reviews-track" role="list">
       <div *ngFor="let review of reviews" class="review-card" role="listitem">
         <div class="review-header">
           <div class="review-avatar">
@@ -10,7 +10,8 @@
             <img *ngIf="review.sanitizedProfileUrl"
                  [src]="review.sanitizedProfileUrl"
                  alt="Reviewer Avatar"
-                 loading="eager" />
+                 loading="eager" 
+                 (error)="usePlaceholder($event)"/>
            
             <!-- <div class="initials-avatar">
               <h4>{{ getInitials(review.author_name) }}</h4>

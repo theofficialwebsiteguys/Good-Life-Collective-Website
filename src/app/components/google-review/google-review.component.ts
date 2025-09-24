@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReviewsService } from '../../reviews.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { map, Observable } from 'rxjs';
 
 interface ReviewItem {
   id: string;                 // synthesized
@@ -21,37 +22,24 @@ interface ReviewItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GoogleReviewComponent {
-  reviews: any[] = [];
+  reviews$!: Observable<any[]>;
   placeId = 'ChIJ-6MjXjC11okRI3zurNT5EF8'; // Your Google Place ID
 
   constructor(private googleReviewsService: ReviewsService, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    this.googleReviewsService.getReviews(this.placeId).subscribe({
-      next: (response) => {
-        this.reviews = response.map((review: any) => {
-          const sanitizedUrl = review.profile_photo_url ? this.sanitizeUrl(review.profile_photo_url) : null;
-  
-          // Preload the image by creating a new Image() instance
-          if (sanitizedUrl) {
-            const img = new Image();
-            img.src = review.profile_photo_url as string; // Force browser to fetch image
-          }
-  
-          return {
+     this.reviews$ = this.googleReviewsService.getReviews(this.placeId).pipe(
+        map((response: any[]) =>
+          response.map(review => ({
             ...review,
-            sanitizedProfileUrl: sanitizedUrl
-          };
-        });
-      },
-      error: (error) => {
-        console.error('Error fetching reviews:', error);
-      }
-    });
+            sanitizedProfileUrl: review.profile_photo_url ?? null // no sanitizer
+          }))
+        )
+      );
   }
   
   usePlaceholder(event: any) {
-    event.target.src = 'assets/default-avatar.png'; // Path to local placeholder image
+    event.target.src = 'assets/default.jpg'; // Path to local placeholder image
   }
   
   

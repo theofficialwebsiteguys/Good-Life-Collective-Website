@@ -23,4 +23,5 @@ export class BusinessDetailsComponent {
     const q = this.address ? encodeURIComponent(this.address) : `${this.lat},${this.lng}`;
     return `https://www.google.com/maps/search/?q=${q}`;
   }
+
 }

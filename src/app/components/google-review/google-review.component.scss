@@ -7,9 +7,10 @@
   }
   
   .reviews-title {
-    font-size: 24px;
+  font-size: clamp(1.6rem, 2vw, 2rem);
     font-weight: bold;
     margin-bottom: 20px;
+    color: white;
   }
   
   .reviews-carousel {
@@ -28,7 +29,6 @@
   
   
   .review-card {
-    background: #000000;
     color: #fff;
     padding: 20px;
     border-radius: 15px;
@@ -54,7 +54,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2e7d32;
     font-size: 18px;
     font-weight: bold;
   }
@@ -74,12 +73,12 @@
   }
   
   .review-author {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
   }
   
   .review-date {
-    font-size: 12px;
+    font-size: 14px;
     color: #ccc;
   }
   
@@ -90,7 +89,7 @@
   }
   
   .review-text {
-    font-size: 14px;
+    font-size: 18px;
     color: #f1f1f1;
   }
   

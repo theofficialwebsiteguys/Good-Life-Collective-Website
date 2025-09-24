@@ -252,7 +252,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 --------------------------------------------------------------------------------
-Package: admin-dashboard
+Package: good-life-admin-dashboard
 License: undefined
 
 

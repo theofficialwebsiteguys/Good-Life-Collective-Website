@@ -1,36 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReviewsService } from '../../reviews.service';
 import { BannersService } from '../../banners.service';
 
 @Component({
   selector: 'app-hero',
+  standalone: true, // Assuming this is part of a standalone component setup
   imports: [CommonModule, RouterModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
-export class HeroComponent {
-  @Input() singleImage: string | null = 'https://storage.googleapis.com/the-website-guys/Good-Life-Collective-Rochester/carousel2.png'; // Image for static pages
-  @Input() title: string = "Welcome To Good Life Collective Dispensers"; // Dynamic Title
-  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary. Order now for pickup or FREE delivery today."; // Dynamic Subtitle
+export class HeroComponent implements OnInit, OnDestroy {
+  @Input() singleImage: string | null = null; 
+  @Input() title: string = "Welcome To Good Life Collective";
+  @Input() subtitle: string = "Premium Recreational Cannabis Dispensary. Order now for pickup or FREE delivery today.";
   @Input() buttons: { text: string; class: string; link?: string }[] = [
     { text: "Shop", class: "btn-primary", link: "/shop" },
-    { text: "About Us", class: "btn-secondary", link: "/about"  }
+    { text: "About Us", class: "btn-secondary", link: "/about" }
   ];
-  @Input() heroHeight: string = '70vh'; // Default height for main pages
+  @Input() heroHeight: string = '70vh'; 
 
-  
-  // images: string[] = [
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel10.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel3.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel4.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel5.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel6.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel7.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel8.jpg',
-  //   'https://storage.googleapis.com/the-website-guys/Flower-Power/carousel9.jpg'
-  // ];
   banners: { image: string; title: string; description: string }[] = [];
   currentIndex: number = 0;
   intervalId: any;
@@ -38,34 +27,39 @@ export class HeroComponent {
   constructor(private bannersService: BannersService){}
 
   ngOnInit(): void {
-    if (!this.singleImage) {
-      // If no single image is provided, start the carousel
-      this.loadCarouselImages();
-      this.startCarousel();
-    }
+    this.loadCarouselImages();
+    this.startCarousel();
   }
 
   loadCarouselImages() {
-    this.bannersService.getCarouselImages().subscribe(
-      response => {
-        console.log(response)
-        this.banners = response.images.map((imgUrl, index) => ({
-          image: `${imgUrl}?v=${new Date().getTime()}`,
-          title: `Carousel Image ${index + 1}`,
-          description: 'Good Life Collective Dispensary',
-        }));
-        console.log(this.banners)
-      },
-      error => {
-        console.error('Error fetching carousel images:', error);
-      }
-    );
+    // You can hardcode images here for testing or use a service
+    this.banners = [
+        { image: 'assets/hero1.jpg', title: 'Image 1', description: 'Good Life Collective Dispensary' },
+        { image: 'assets/hero2.jpg', title: 'Image 2', description: 'Good Life Collective Dispensary' },
+        { image: 'assets/hero3.jpg', title: 'Image 3', description: 'Good Life Collective Dispensary' },
+        { image: 'assets/hero4.jpg', title: 'Image 4', description: 'Good Life Collective Dispensary' },
+        { image: 'assets/hero5.jpg', title: 'Image 5', description: 'Good Life Collective Dispensary' },  
+      ];
+    
+    // Uncomment the below code if you want to fetch images from a service
+    // this.bannersService.getCarouselImages().subscribe(
+    //   response => {
+    //     this.banners = response.images.map((imgUrl, index) => ({
+    //       image: `${imgUrl}?v=${new Date().getTime()}`,
+    //       title: `Carousel Image ${index + 1}`,
+    //       description: 'Good Life Collective Dispensary',
+    //     }));
+    //   },
+    //   error => {
+    //     console.error('Error fetching carousel images:', error);
+    //   }
+    // );
   }
 
   startCarousel(): void {
     this.intervalId = setInterval(() => {
       this.nextSlide();
-    }, 5000);
+    }, 5000); // Change image every 5 seconds
   }
 
   nextSlide(): void {

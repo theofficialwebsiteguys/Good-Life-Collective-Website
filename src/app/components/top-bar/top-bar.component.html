@@ -2,11 +2,18 @@
 <header class="location-bar" role="banner">
   <div class="inner">
     <a class="brand" [routerLink]="'/'" aria-label="Good Life Collective — Home">
-      <img
+      <!-- <img
         [src]="'assets/its-a-lifestyle.svg'"
         class="logo"
         alt="Company logo"
-      />
+      /> -->
+      <img
+          class="brand-logo"
+          [src]="'assets/good-life-logo.png'"
+          [alt]="''"
+          loading="eager"
+          decoding="async"
+        />
     </a>
 
     <a class="cta" [routerLink]="'/shop'">Shop Online</a>

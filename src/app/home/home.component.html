@@ -1,10 +1,10 @@
-<main>
+<main class="bg-gradient">
     <!-- Marquee Section -->
 
   
     <!-- Hero Section -->
     <section aria-labelledby="hero-section-heading">
-      <h2 id="hero-section-heading" class="visually-hidden">Main Promotional Banner</h2>
+      <h1 id="hero-section-heading" class="visually-hidden">Main Promotional Banner</h1>
       <app-hero></app-hero>
     </section>
 
@@ -30,11 +30,34 @@
         </div> -->
 
         <!-- Carousel (Shown when isLoading is false) -->
-        <lib-products-carousel category="Flower" [limit]="10"></lib-products-carousel>
-        <lib-products-carousel category="Vapes" [limit]="10"></lib-products-carousel>
-        <lib-products-carousel category="Edibles" [limit]="10"></lib-products-carousel>
-        <lib-products-carousel category="Concentrates" [limit]="10"></lib-products-carousel>
-        <lib-products-carousel category="Pre-Roll" [limit]="10"></lib-products-carousel>
+         <div class="product-carousel">
+          <lib-products-carousel category="Flower" [limit]="10"></lib-products-carousel>
+         </div>
+
+        <app-banner
+          background="assets/feature1.jpg"
+          title="Elevating The Experience"
+          subtitle="Welcome to Good Life Collective, your “go to” destination for a curated cannabis experience. At Good Life, we redefine expectations by prioritizing unparalleled product quality and an immersive, safe environment."
+          buttonText="EXPLORE MORE"
+          buttonLink="/shop">
+        </app-banner>
+
+        <div class="product-carousel">
+                <lib-products-carousel category="Vapes" [limit]="10"></lib-products-carousel>
+        </div>
+
+        <app-banner
+          background="assets/hero5.jpg"
+          title="Shop For What You Want, They Way You Want"
+          subtitle="Good Life makes it easy to access the highest quality cannabis products and accessories."
+          buttonText="SHOP NOW"
+          buttonLink="/shop">
+        </app-banner>
+
+        <div class="product-carousel">
+            <lib-products-carousel category="Edibles" [limit]="10"></lib-products-carousel>
+        </div>
+
       </div>
     
   
@@ -52,8 +75,22 @@
           'Sunday: 11:00 AM – 7:00 PM'
         ]"
       ></app-business-details>
+
+      <div class="faq-section">
+       <app-faq></app-faq>
+      </div>
+
+
+
     </section>
-  
+          <app-banner
+          background="assets/feature3.jpg"
+          title="Everything For Everyone"
+          subtitle="Whether you are an experienced user or new to cannabis, the Good Life Collective team is here to guide and assist you, ensuring you find the perfect products for your needs. We offer a diverse line of cannabis products in all forms of consumption."
+          buttonText="FIND YOURS"
+          buttonLink="/shop">
+        </app-banner>
+
     <!-- Customer Reviews Section -->
     <section aria-labelledby="reviews-heading">
       <h2 id="reviews-heading" class="visually-hidden">Customer Reviews</h2>

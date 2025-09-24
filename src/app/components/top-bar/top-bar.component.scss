@@ -2,13 +2,14 @@
 :root{
   --ink: #000;
   --paper: #fff;
-  --brand-aqua: #8ff5ea;
+  --brand-aqua: #69fced;
   --chip: #111418;
   --ring: rgba(143,245,234,.45);
 }
 
 .location-bar{
-  background:#000;
+  background: radial-gradient(1200px 600px at 10% -10%, #69fced 0%, rgba(0,0,0,0) 60%),
+              linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
   color:#e8f0f5;
   border-bottom:1px solid rgba(255,255,255,.06);
 }
@@ -21,23 +22,22 @@
   align-items:center;
   gap:24px; /* optional: smaller gap than 100px */
 }
-.brand img{ height:100px; width:auto; display:block; }
+.brand img{ height:120px; width:auto; display:block; }
 
 .cta{
   justify-self:end; 
-  background:#8ff5ea;
+  background:#69fced;
   color:#000;
   font-weight:700;
+  font-size: 1.2rem;
   padding:10px 18px;
   border-radius:999px;
-  box-shadow:0 4px 18px rgba(143,245,234,.35);
-  transition: transform .12s ease, box-shadow .2s ease;
+  transition: all 0.3s ease-in-out;
   width: max-content;            
   text-decoration:none;
   text-align:center;
 }
-.cta:focus-visible{ outline:3px solid var(--ring); outline-offset:2px; }
-.cta:hover{ transform: translateY(-1px); box-shadow:0 8px 24px rgba(143,245,234,.45); }
+.cta:hover{ background: white; }
 
 .locations{
   display:flex;

@@ -7,12 +7,12 @@
 // 🌿 Global Color Variables
 
 // Primary Colors
-$primary-color: #9cf0e1;  // Dark green
+$primary-color: #69fced;  // Dark green
 $secondary-color: #000000;  // Light green
 
 // Accent Colors
 $accent-color: #000000; // Dark red for contrast
-$highlight-color: #000000; // Creamy background
+$highlight-color: #0d0d0d; // Creamy background
 
 // Neutral Colors
 $black: #1A1A1A;
@@ -67,23 +67,20 @@ body {
   padding: 10px 16px;
   border-radius: 8px;
   border: none;
-  transition: all 0.3s ease-in-out;
-  
-  &:hover {
-    background-color: color.adjust($primary-color, $lightness: -10%);
-  }
+  font-size: 22px;
 }
 
 .btn-secondary {
-  background-color: $secondary-color;
+  background-color: $highlight-color;
   color: $primary-color;
   padding: 10px 16px;
   border-radius: 8px;
   border: none;
   transition: all 0.3s ease-in-out;
+  font-size: 22px;
   
   &:hover {
-    background-color: $secondary-color;
+    color: black;
   }
 }
 

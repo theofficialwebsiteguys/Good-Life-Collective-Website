@@ -1,12 +1,26 @@
-<div class="faq-container">
-  <h2 class="faq-title afacad-flux-regular">Frequently Asked Questions</h2>
-  <div *ngFor="let faq of faqs" class="faq-item">
-    <div class="faq-question" (click)="toggleFaq(faq)">
-      <h4>{{ faq.question }}</h4>
-      <span [ngClass]="{'rotate': faq.open}">&#x25BC;</span>
-    </div>
-    <div class="faq-answer" [ngClass]="{'show': faq.open}">
-      <div [innerHTML]="faq.answer"></div>
-    </div>
-  </div>
-</div>
+<!-- FAQ Section -->
+    <section class="faq" aria-labelledby="faq-heading">
+      <h3 id="faq-heading" class="faq-title">Frequently Asked Questions</h3>
+
+      <ul class="faq-list">
+        <li class="faq-item" *ngFor="let faq of faqs; let i = index">
+          <button
+            class="faq-question"
+            [attr.aria-expanded]="faq.open"
+            (click)="toggleFaq(i)">
+            {{ faq.q }}
+            <i
+              class="fa-solid fa-chevron-down"
+              [style.transform]="faq.open ? 'rotate(180deg)' : 'rotate(0deg)'"
+              aria-hidden="true">
+            </i>
+          </button>
+
+          <div
+            class="faq-answer"
+            [@expandCollapse]="faq.open ? 'expanded' : 'collapsed'">
+            <p>{{ faq.a }}</p>
+          </div>
+        </li>
+      </ul>
+    </section>

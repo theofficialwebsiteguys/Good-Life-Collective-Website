@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { DashboardComponent } from 'admin-dashboard'
+import { DashboardComponent } from 'good-life-admin-dashboard'
 @Component({
   selector: 'app-banner',
   imports: [CommonModule, RouterModule],
@@ -10,13 +10,18 @@ import { DashboardComponent } from 'admin-dashboard'
   styleUrl: './banner.component.scss'
 })
 export class BannerComponent {
-  @ViewChild('videoBackground') video!: ElementRef<HTMLVideoElement>;
+  /** Background image path */
+  @Input() background = 'assets/banner-bg.jpg';
 
-  ngAfterViewInit() {
-    this.video.nativeElement.play().catch(() => {
-      console.warn("Autoplay failed, attempting to play again.");
-      this.video.nativeElement.muted = true;
-      this.video.nativeElement.play();
-    });
-  }
+  /** Headline */
+  @Input() title = 'UNLOCK MORE. SPEND LESS. SAVE BIG!';
+
+  /** Subtitle */
+  @Input() subtitle = `Get the most value with our everyday discounts! From seniors and veterans to first responders,
+  we offer special savings to show our appreciation. Plus, don’t miss out on amazing rewards and referral perks. 
+  Check back often—new deals and exclusive offers are always around the corner!`;
+
+  /** CTA Button */
+  @Input() buttonText = 'EXPLORE MORE';
+  @Input() buttonLink = '#';
 }

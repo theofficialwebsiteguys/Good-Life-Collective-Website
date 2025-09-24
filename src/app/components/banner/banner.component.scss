@@ -1,76 +1,54 @@
-.banner-container {
-    position: relative;
-    width: 100%;
-    min-height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
+.banner {
+  position: relative;
+  width: auto;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #ffffff;
   }
-  
-  .banner-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-  }
-  
-  .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); // Dark overlay effect
-    z-index: 1;
-  }
-  
-  .banner-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    max-width: 700px;
-  }
-  
-  .banner-subtitle {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #f1bb09; // Gold color
-  }
-  
-  .banner-title {
-    font-size: 42px;
-    font-weight: bold;
-    margin: 10px 0;
-    font-family: 'Cursive', sans-serif;
-  }
-  
-  .banner-text {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #ddd;
-  }
-  
-  .banner-button {
-    background: #f1bb09;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .banner-button:hover {
-    background: #f1bb09bd;
-  }
-  
+}

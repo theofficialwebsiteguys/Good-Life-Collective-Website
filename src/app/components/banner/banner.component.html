@@ -1,19 +1,8 @@
-<section class="banner-container" role="region" aria-labelledby="banner-heading">
-  <!-- Video Background (decorative) -->
-  <video #videoBackground class="banner-video" autoplay muted loop playsinline aria-hidden="true">
-    <source src="https://storage.googleapis.com/the-website-guys/Flower-Power/fpd-banner" type="video/mp4">
-  </video>
-
-  <!-- Dark Overlay (decorative) -->
-  <div class="banner-overlay" aria-hidden="true"></div>
-
-  <!-- Content -->
-  <div class="banner-content">
-    <p class="banner-subtitle">GET IN TOUCH</p>
-    <h2 id="banner-heading" class="banner-title">Do you have any other questions?</h2>
-    <p class="banner-text">
-      Feel free to reach out. Our expert team is here to help with your inquiries.
-    </p>
-    <button class="banner-button" [routerLink]="'/contact'">CONTACT US</button>
+<section class="banner" [style.background-image]="'url(' + background + ')'">
+  <div class="overlay"></div>
+  <div class="content">
+    <h2 class="title">{{ title }}</h2>
+    <p class="subtitle">{{ subtitle }}</p>
+    <a [href]="buttonLink" class="cta btn-primary">{{ buttonText }}</a>
   </div>
 </section>
