@@ -144,11 +144,12 @@
 }
 
   .ft-disclaimer {
-    background: #111; /* slightly lighter than black for contrast */
+    background: #fffb00; /* slightly lighter than black for contrast */
     padding: 14px 20px;
     font-size: 16px;
+    font-weight: bold;
     line-height: 1.5;
-    color: #bbb;
+    color: #ff4800;
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.15);
 
@@ -157,10 +158,10 @@
     }
 
     a {
-      color: #67f0df;
+      color: #ff0000;
       text-decoration: underline;
     }
     a:hover {
-      color: #fff;
+      color: #000000;
     }
   }
