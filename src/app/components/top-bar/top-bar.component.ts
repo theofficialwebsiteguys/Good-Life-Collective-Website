@@ -1,12 +1,36 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+  query,
+  stagger
+} from '@angular/animations';
 
 @Component({
   selector: 'app-top-bar',
   imports: [CommonModule, RouterModule],
   templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss'
+  styleUrl: './top-bar.component.scss',
+  animations: [
+    trigger('fadeInElements', [
+      transition(':enter', [
+        query('.brand, .cta, .loc', [
+          style({ opacity: 0, transform: 'translateY(-12px)' }),
+          stagger(120, [
+            animate(
+              '800ms cubic-bezier(0.25, 1, 0.5, 1)',
+              style({ opacity: 1, transform: 'translateY(0)' })
+            )
+          ])
+        ])
+      ])
+    ])
+  ]
 })
 export class TopBarComponent {
   // header-locations.component.ts (snippet)
@@ -32,6 +56,7 @@ export class TopBarComponent {
     { day: 5, open: 8, close: 23 }, // Friday: 10AM - 11PM
     { day: 6, open: 10, close: 23 }  // Saturday: 10AM - 11PM
   ];
+
 
   ngOnInit() {
     this.checkBusinessStatus();

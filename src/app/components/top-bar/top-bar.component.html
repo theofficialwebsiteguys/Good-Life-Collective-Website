@@ -1,32 +1,19 @@
-<!-- header-locations.component.html -->
 <header class="location-bar" role="banner">
-  <div class="inner">
+  <div class="inner" [@fadeInElements]>
     <a class="brand" [routerLink]="'/'" aria-label="Good Life Collective — Home">
-      <!-- <img
-        [src]="'assets/its-a-lifestyle.svg'"
-        class="logo"
-        alt="Company logo"
-      /> -->
-      <img
-          class="brand-logo"
-          [src]="'assets/good-life-logo.png'"
-          [alt]="''"
-          loading="eager"
-          decoding="async"
-        />
+      <img class="brand-logo" src="assets/good-life-logo.png" alt="Good Life Collective logo" />
     </a>
 
-    <a class="cta" [routerLink]="'/shop'">Shop Online</a>
-
-    <!-- <ul class="locations" role="list">
+    <ul class="locations">
       <li class="loc" *ngFor="let l of locations">
-        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
         <div class="meta">
           <strong>{{ l.city }}</strong>
-          <small *ngFor="let line of l.hours">{{ line }}</small>
+          <small *ngFor="let h of l.hours">{{ h }}</small>
           <em *ngIf="l.note">{{ l.note }}</em>
         </div>
       </li>
-    </ul> -->
+    </ul>
+
+    <a class="cta" [routerLink]="'/shop'">Shop Online</a>
   </div>
 </header>

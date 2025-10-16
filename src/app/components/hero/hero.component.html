@@ -5,7 +5,7 @@
   [style.minHeight]="heroHeight || '80vh'"
 >
   <div class="carousel-image-container">
-    <div 
+    <div
       class="carousel-image-item"
       *ngFor="let banner of banners; let i = index"
       [class.active]="i === currentIndex"
@@ -16,8 +16,8 @@
 
   <div class="overlay overlay--left" aria-hidden="true"></div>
 
-  <div class="hero-inner">
-    <div class="hero-text">
+  <div class="hero-inner" *ngIf="animateHero">
+    <div class="hero-text" [@slideInLeft]>
       <h1 id="hero-title">{{ title }}</h1>
       <p class="subtitle">{{ subtitle }}</p>
       <div class="buttons">
@@ -26,16 +26,15 @@
         </button>
       </div>
     </div>
-    <div class="hero-aside">
-      <div class="logo-card">
-              <img
-        [src]="'assets/its-a-lifestyle.svg'"
-        class="brand-logo"
-        alt="Company logo"
-      />
 
+    <div class="hero-aside"  [@slideInRight]>
+      <div class="logo-card">
+        <img
+          [src]="'assets/its-a-lifestyle.svg'"
+          class="brand-logo"
+          alt="Company logo"
+        />
       </div>
     </div>
   </div>
-
 </section>

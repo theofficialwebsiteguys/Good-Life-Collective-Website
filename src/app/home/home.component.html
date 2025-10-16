@@ -18,12 +18,12 @@
     </section> -->
   
     <!-- Category and Shop Section -->
-    <section aria-labelledby="category-section-heading">
+    <section appScrollAnimation aria-labelledby="category-section-heading">
       <h2 id="category-section-heading" class="visually-hidden">Product Categories and Shop</h2>
       <app-category-section></app-category-section>
     </section>
 
-      <div class="product-carousel-section" role="region" aria-labelledby="newest-products-heading">
+      <div appScrollAnimation class="product-carousel-section" role="region" aria-labelledby="newest-products-heading">
       <!-- Loading Spinner (Shown when isLoading is true) -->
         <!-- <div class="spinner-container" *ngIf="isLoading">
           <mat-spinner></mat-spinner>
@@ -42,7 +42,7 @@
           buttonLink="/shop">
         </app-banner>
 
-        <div class="product-carousel">
+        <div appScrollAnimation class="product-carousel">
                 <lib-products-carousel category="Vapes" [limit]="10"></lib-products-carousel>
         </div>
 
@@ -54,7 +54,7 @@
           buttonLink="/shop">
         </app-banner>
 
-        <div class="product-carousel">
+        <div appScrollAnimation class="product-carousel">
             <lib-products-carousel category="Edibles" [limit]="10"></lib-products-carousel>
         </div>
 

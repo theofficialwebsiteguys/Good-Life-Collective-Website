@@ -3,11 +3,14 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { DashboardComponent } from 'good-life-admin-dashboard'
+import { fadeIn, fadeInUp } from '../../animations';
+import { ScrollAnimationDirective } from '../../scroll-animation.directive';
 @Component({
   selector: 'app-banner',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ScrollAnimationDirective],
   templateUrl: './banner.component.html',
-  styleUrl: './banner.component.scss'
+  styleUrl: './banner.component.scss',
+  animations: [fadeInUp, fadeIn]
 })
 export class BannerComponent {
   /** Background image path */

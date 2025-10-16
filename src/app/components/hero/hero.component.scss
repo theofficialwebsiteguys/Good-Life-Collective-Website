@@ -5,6 +5,7 @@
   place-items: center;
   overflow: hidden; // Ensures images don't spill outside the hero section
   min-height: var(--hero-height, 80vh); // Use a CSS custom property for the height
+    perspective: 1000px;
 
   // Container for all carousel images
   .carousel-image-container {
@@ -31,8 +32,15 @@
 
     &.active {
       opacity: 1; // Visibly active slide
+      animation: zoomFade 8s ease-in-out forwards;
     }
   }
+
+  @keyframes zoomFade {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+
   
   // The overlay is now on top of the images but below the main content
   .overlay {
@@ -90,6 +98,10 @@
     border-radius: 60px;
     padding: 20px 24px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+        transition: transform 0.6s ease;
+    &:hover {
+      transform: scale(1.03) rotate3d(1, 1, 0, 6deg);
+    }
   }
 
   .brand-logo {
@@ -159,4 +171,13 @@
       justify-content: center;
     }
   }
+
+  .buttons button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(105, 252, 237, 0.35);
+    }
+  }
+
 }

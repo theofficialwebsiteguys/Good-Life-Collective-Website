@@ -1,72 +1,147 @@
-/* header-locations.component.scss */
-:root{
+:root {
   --ink: #000;
   --paper: #fff;
   --brand-aqua: #69fced;
   --chip: #111418;
-  --ring: rgba(143,245,234,.45);
+  --ring: rgba(143, 245, 234, 0.45);
 }
 
-.location-bar{
-  background: radial-gradient(1200px 600px at 10% -10%, #69fced 0%, rgba(0,0,0,0) 60%),
+.location-bar {
+  background: radial-gradient(1200px 600px at 10% -10%, #69fced 0%, rgba(0, 0, 0, 0) 60%),
               linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
-  color:#e8f0f5;
-  border-bottom:1px solid rgba(255,255,255,.06);
+  color: #e8f0f5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
 }
-.inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:12px 20px;
-  display:grid;
-  grid-template-columns: auto 1fr auto; /* was: auto auto 1fr */
-  align-items:center;
-  gap:24px; /* optional: smaller gap than 100px */
-}
-.brand img{ height:120px; width:auto; display:block; }
 
-.cta{
-  justify-self:end; 
-  background:#69fced;
-  color:#000;
-  font-weight:700;
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  animation: fadeIn 1s ease-in-out both;
+}
+
+/* Brand logo */
+.brand img {
+  height: 120px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.brand:hover img {
+  transform: scale(1.03);
+}
+
+/* CTA Button */
+.cta {
+  justify-self: end;
+  background: #69fced;
+  color: #000;
+  font-weight: 700;
   font-size: 1.2rem;
-  padding:10px 18px;
-  border-radius:999px;
+  padding: 10px 18px;
+  border-radius: 999px;
   transition: all 0.3s ease-in-out;
-  width: max-content;            
-  text-decoration:none;
-  text-align:center;
-}
-.cta:hover{ background: white; }
+  width: max-content;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 
-.locations{
-  display:flex;
-  gap:28px;
-  list-style:none;
-  margin:0; padding:0;
-  justify-self:end;
-}
-.loc{
-  display:flex; gap:10px; align-items:flex-start;
-  background:var(--chip);
-  border:1px solid rgba(255,255,255,.06);
-  padding:10px 12px; border-radius:14px;
-  min-width:210px;
-}
-.loc i{ margin-top:3px; }
-.meta strong{ display:block; color:#fff; font-weight:700; }
-.meta small{ display:block; color:#c6d1db; line-height:1.2; }
-.meta em{ display:block; color:var(--brand-aqua); font-style:normal; margin-top:2px; }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(105, 252, 237, 0.4);
+    background: white;
+  }
 
-@media (max-width: 960px){
-  .inner{ grid-template-columns: auto 1fr; row-gap:12px; }
-  .cta{ justify-self:end; }
-  .locations{ grid-column:1/-1; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-  .loc{ flex:1 1 220px; }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.6s;
+  }
+
+  &:hover::after {
+    left: 100%;
+  }
 }
-@media (max-width: 520px){
-  .brand img{ height:75px; }
-  .cta{ padding:8px 14px; }
-  .locations{ gap:10px; }
-  .loc{ min-width:unset; padding:8px 10px; }
+
+/* Locations List */
+.locations {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-self: end;
+}
+
+.loc {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--chip);
+  padding: 10px 12px;
+  border-radius: 14px;
+  min-width: 210px;
+  transition: transform 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Text Colors */
+.meta strong { color: #fff; font-weight: 700; }
+.meta small { color: #c6d1db; line-height: 1.2; display: block; }
+.meta em { color: var(--brand-aqua); font-style: normal; margin-top: 2px; display: block; }
+
+/* -------------------
+   RESPONSIVE BEHAVIOR
+   ------------------- */
+
+/* Tablet and smaller — hide locations, keep layout clean */
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .locations {
+    display: none;
+  }
+
+  .cta {
+    justify-self: end;
+  }
+
+  .brand img {
+    height: 90px;
+  }
+}
+
+/* Mobile — scale logo + CTA */
+@media (max-width: 520px) {
+  .brand img {
+    height: 70px;
+  }
+
+  .cta {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
 }
