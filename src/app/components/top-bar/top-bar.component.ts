@@ -37,7 +37,7 @@ export class TopBarComponent {
   locations = [
     {
       city: 'Rochester, NY',
-      hours: ['Sun–Thurs: 9am – 9pm', 'Fri–Sat: 9am – 10pm'],
+      hours: ['Mon–Thurs: 9am – 9pm', 'Fri–Sat: 9am – 10pm', 'Sun: 10am - 9pm'],
       note: 'Delivery Available'
     },
     { city: 'Canandaigua, NY', hours: ['Mon–Sat: 9am – 9pm', 'Sun: 11am – 6pm'] },
